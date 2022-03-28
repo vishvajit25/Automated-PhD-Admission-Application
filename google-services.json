@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "680392166967",
+    "firebase_url": "https://phd-application-7e351-default-rtdb.firebaseio.com",
+    "project_id": "phd-application-7e351",
+    "storage_bucket": "phd-application-7e351.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680392166967:android:9bb7c2b9fa5136e41439b2",
+        "android_client_info": {
+          "package_name": "com.example.college_phd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680392166967-dgkn5ikje906m93qusna42u2pqju0o7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9WqYeYqwtiO5FAXJoePPdCOnA5_S46y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680392166967-dgkn5ikje906m93qusna42u2pqju0o7o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680392166967:android:c87cda361a0e7daa1439b2",
+        "android_client_info": {
+          "package_name": "com.example.collegeapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680392166967-dgkn5ikje906m93qusna42u2pqju0o7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9WqYeYqwtiO5FAXJoePPdCOnA5_S46y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680392166967-dgkn5ikje906m93qusna42u2pqju0o7o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680392166967:android:575430df648071d01439b2",
+        "android_client_info": {
+          "package_name": "com.example.phd_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680392166967-dgkn5ikje906m93qusna42u2pqju0o7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9WqYeYqwtiO5FAXJoePPdCOnA5_S46y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680392166967-dgkn5ikje906m93qusna42u2pqju0o7o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
