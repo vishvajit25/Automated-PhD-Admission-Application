@@ -2,6 +2,8 @@ package com.example.college_phd;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,12 +12,18 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.college_phd.databinding.ActivityNavigationDrawerBinding;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
 public class Navigation_drawer extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationDrawerBinding binding;
+    private View hview;
+    private TextView user;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +40,21 @@ public class Navigation_drawer extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-        DrawerLayout drawer = (DrawerLayout) binding.appBarNavigationDrawer;
-        NavigationView navigationView = (NavigationView) binding.appBarNavigationDrawer;
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView =  binding.navView;
+        hview = navigationView.getHeaderView(0);
+        user = hview.findViewById(R.id.user);
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("newsp", Context.MODE_PRIVATE);
+        String username = sp.getString("Username", "");
+        sharedPreference = getSharedPreferences("mypref",MODE_PRIVATE);
+        String s1 = sharedPreference.getString("name", null);
+        String name = sharedPreference.getString("name",null);
+        /*Intent intent = getIntent();
+        String name = intent.getStringExtra("NAME");*/
+        TextView Fullname = findViewById(R.id.welcome);
+        Fullname.setText("Welcome "+username);
+        FirebaseAuth.getInstance().getUid();
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

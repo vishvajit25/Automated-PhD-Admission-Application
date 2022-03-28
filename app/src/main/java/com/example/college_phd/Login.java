@@ -17,11 +17,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
 public class Login extends AppCompatActivity {
     EditText mEmail, mPassword;
     Button Login, teacher,student;
     Button register;
+    DatabaseReference reference;
     TextView mcreatebutton;
     FirebaseAuth mAuth;
 
