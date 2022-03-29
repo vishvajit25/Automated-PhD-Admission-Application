@@ -97,10 +97,10 @@ public class form2 extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String tenth = tenth1.getText().toString().trim();
-                String tenthtwo = tenth2.getText().toString().trim();
-                String twelfth = twelfth1.getText().toString();
-                String twelfthtwo = twelfth2.getText().toString();
+                String tenthperc = tenth1.getText().toString().trim();
+                String tenthlink = tenth2.getText().toString().trim();
+                String twelfthperc = twelfth1.getText().toString();
+                String twelfthlink = twelfth2.getText().toString();
                 String tenthboard = tenth3.getText().toString();
                 String twelfthboard = twelfth3.getText().toString();
                 String courseopted = course.getText().toString();
@@ -108,14 +108,16 @@ public class form2 extends AppCompatActivity {
                 String ugperc = ug.getText().toString();
                 userID = mAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = fstore.collection("users").document(userID);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthboard").setValue(tenth3);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthpercentage").setValue(tenth1);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthcertificate").setValue(tenth2);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthboard").setValue(twelfth3);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthpercentage").setValue(twelfth1);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthcertificate").setValue(twelfthtwo);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("ugpercentage").setValue(ug);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("courseopted").setValue(course);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthboard").setValue(tenthboard);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthpercentage").setValue(tenthperc);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthcertificate").setValue(tenthlink);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthboard").setValue(twelfthboard);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthpercentage").setValue(twelfthperc);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthcertificate").setValue(twelfthlink);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("ugpercentage").setValue(ugperc);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("courseopted").setValue(courseopted);
+                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("authorid").setValue(author);
+
                 //Map<String,Object> user = new HashMap<>();
                 //final Object Tenth_Board = user.put("Tenth Board", tenthboard);
                 //final Object Tenth_percentage = user.put("Tenth %", tenth);
