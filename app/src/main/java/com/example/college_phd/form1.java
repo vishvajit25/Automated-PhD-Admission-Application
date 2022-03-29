@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.college_phd.ui.home.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.StorageReference;
@@ -42,12 +41,6 @@ public class form1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form1);
         save = findViewById(R.id.savebutton);
-        mAuth = FirebaseAuth.getInstance();
-        fstore = FirebaseFirestore.getInstance();
-        if(mAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),form1.class));
-            finish();
-        }
         EditText dob = (EditText) findViewById(R.id.dob);
         gender_atc = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView_gender);
         nationality_atc = (AutoCompleteTextView) findViewById(R.id.nationality);
@@ -60,7 +53,6 @@ public class form1 extends AppCompatActivity {
                 updateLabel();
 
             }
-
             private void updateLabel() {
                 String myFormat = "dd/MM/yy";
                 SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.US);
@@ -78,11 +70,10 @@ public class form1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(form1.this, "Saved Data", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(form1.this, HomeFragment.class);
-                startActivity(new Intent(getApplicationContext(),HomeFragment.class));
+                Intent intent = new Intent(form1.this, MainActivity.class);
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_selectable_list_item,gender);
         gender_atc.setAdapter(adapter);

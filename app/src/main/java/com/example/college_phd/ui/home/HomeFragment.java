@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment  {
         View view = null;
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        fa1 = (TextView) view.findViewById(R.id.appli_link1);
+        fa1 = (TextView) view.findViewById(R.id.fillapplication);
         fa2 = (TextView) view.findViewById(R.id.appli_link2);
         va = (TextView) view.findViewById(R.id.appli_link3);
         da = (TextView) view.findViewById(R.id.appli_link4);
