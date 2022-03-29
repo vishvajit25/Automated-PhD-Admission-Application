@@ -1,9 +1,6 @@
 package com.example.college_phd.ui.home;
 
-import static android.content.Context.MODE_PRIVATE;
-
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,35 +12,44 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.college_phd.R;
+import com.example.college_phd.form1;
+import com.example.college_phd.form2;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment  {
 
-    TextView t;
-    SharedPreferences sharedPreference;
-
-    private static final String SHARED_PREF_NAME = "mypref";
-    private static final String KEY_NAME = "name";
-
+    TextView fa2, va, da;
+    TextView fa1;
+    private View nview;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View v = null;
-        v = inflater.inflate(R.layout.fragment_home, container, false);
-        return v;
-        SharedPreferences sp = getApplicationContext().getSharedPreferences("newsp", MODE_PRIVATE);
-        String username = sp.getString("Username", "");
-        sharedPreference = getSharedPreferences("mypref",MODE_PRIVATE);
-        String s1 = sharedPreference.getString("name", null);
-        String name = sharedPreference.getString("name",null);
-        /*Intent intent = getIntent();
-        String name = intent.getStringExtra("NAME");*/
-        TextView Fullname = findViewById(R.id.welcome);
-        Fullname.setText("Welcome "+username);
+        View view = null;
+        view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        fa1 = (TextView) view.findViewById(R.id.appli_link1);
+        fa2 = (TextView) view.findViewById(R.id.appli_link2);
+        va = (TextView) view.findViewById(R.id.appli_link3);
+        da = (TextView) view.findViewById(R.id.appli_link4);
+
+
+        fa1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), form1.class);
+                startActivity(intent);
+            }
+        });
+        fa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), form2.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        return view;
     }
-
-    private Context getApplicationContext() {
-    }
-
-
 }

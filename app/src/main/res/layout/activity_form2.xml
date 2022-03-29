@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/background"
     tools:context=".form2"
     android:id="@+id/form2"
     android:paddingTop="10sp"
@@ -24,13 +24,12 @@
         android:gravity="center_horizontal"
         android:text="Educational Records : "
         android:layout_gravity="center"
-        android:layout_marginTop="@android:dimen/app_icon_size"
         android:textColor="#000000"
         android:textSize="30sp" />
 
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView_tenth"
+        android:id="@+id/TextView_tenth"
         android:layout_width="211dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -67,14 +66,13 @@
 
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView_twelfth"
+        android:id="@+id/TextView_twelfth"
         android:layout_width="211dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="1dp"
-
         android:dropDownWidth="211dp"
         android:hint="12th BOARD"
         android:inputType="text"/>
@@ -117,10 +115,10 @@
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="UG Percentage"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         />
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView_Course"
+        android:id="@+id/TextView_Course"
         android:layout_width="211dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -151,7 +149,7 @@
         android:id="@+id/pay"
         android:layout_width="205dp"
         android:layout_height="36dp"
-        android:backgroundTint="#AC3B61"
+        android:backgroundTint="#000000"
         android:layout_gravity="center"
         android:text="PAY"
         tools:ignore="MissingConstraints"
@@ -165,7 +163,7 @@
         android:text="SUBMIT"
         android:alpha="0.5"
         android:clickable="false"
-        android:backgroundTint="#AC3B61"
+        android:backgroundTint="#000000"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />

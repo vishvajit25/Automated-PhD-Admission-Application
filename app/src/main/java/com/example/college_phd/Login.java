@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.college_phd.ui.home.HomeFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -38,6 +37,13 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Register.class);
                 startActivity(new Intent(getApplicationContext(),Register.class));
+            }
+        });
+        teacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, register_teacher.class);
+                startActivity(new Intent(getApplicationContext(),register_teacher.class));
             }
         });
         mEmail = findViewById(R.id.mail);
@@ -78,9 +84,10 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Login.this, HomeFragment.class);
+                            Intent intent = new Intent (Login.this,MainActivity.class);
+                            startActivity(intent);
                             intent.putExtra("NAME", Fullname);
-                            startActivity(new Intent(getApplicationContext(),HomeFragment.class));
+
                         }else {
                             Toast.makeText(Login.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

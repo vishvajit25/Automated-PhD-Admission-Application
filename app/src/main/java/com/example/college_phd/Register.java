@@ -19,11 +19,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class Register extends AppCompatActivity {
@@ -38,6 +37,7 @@ public class Register extends AppCompatActivity {
     String userID;
     SharedPreferences sharedPreference;
     SharedPreferences sp;
+    DatabaseReference reff;
     private static final String SHARED_PREF_NAME = "mypref";
     private static final String KEY_NAME = "name";
     private static final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnm";
@@ -46,6 +46,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        reff= FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         if(mAuth.getCurrentUser() != null){
@@ -89,13 +90,13 @@ public class Register extends AppCompatActivity {
                 editor1.putString("Username", Fullname);
                 editor1.commit();
                 Applicant applicant = new Applicant(emailid.getText().toString(), name.getText().toString(),textView.getText().toString());
-                dao.add(applicant).addOnSuccessListener(suc->
+                /*dao.add(applicant).addOnSuccessListener(suc->
                 {
                     Toast.makeText(Register.this, "Record Inserted", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(er->
                 {
                         Toast.makeText(Register.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+                });*/
                 if (TextUtils.isEmpty((email))) {
 
                     emailid.setError("Email is required.");
@@ -113,14 +114,17 @@ public class Register extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
                             userID = mAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fstore.collection("users").document(userID);
+                            /*DocumentReference documentReference = fstore.collection("users").document(userID);
 
                             Map<String,Object> user = new HashMap<>();
                             user.put("Name", Fullname);
                             user.put("Email", email);
                             user.put("Phone No", phonenumber);
                             final Object application_id = user.put("Application ID", uniqueid);
-                            documentReference.set(user);
+                            documentReference.set(user);*/
+                            reff.child("Applicant").child(mAuth.getUid()).child("Name").setValue(Fullname);
+                            reff.child("Applicant").child(mAuth.getUid()).child("ApplicantID").setValue(uniqueid);
+
                             Intent intent = new Intent(Register.this, Login.class);
                             intent.putExtra("NAME", Fullname);
                             startActivity(new Intent(getApplicationContext(),Login.class));

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -55,31 +56,39 @@ public class register_teacher extends AppCompatActivity {
         SharedPreferences.Editor myEdit = sharedPreference.edit();
         myEdit.putString("name", name.getText().toString());
         myEdit.commit();
-        register.setOnClickListener(v ->
-        {
-            String email = emailid.getText().toString().trim();
-            String password = pswd.getText().toString().trim();
-            String Fullname = name.getText().toString().trim();
-            String phonenumber = phoneno.getText().toString();
-            Faculty faculty = new Faculty(name.getText().toString(), emailid.getText().toString(), phoneno.getText().toString());
-            dao.add(faculty).addOnSuccessListener(suc ->
-            {
-                Toast.makeText(this, "Recorded data", Toast.LENGTH_SHORT).show();
-            }).addOnFailureListener(er ->
-            {
-                Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
-            });
-            if (TextUtils.isEmpty((email))) {
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = emailid.getText().toString().trim();
+                String password = pswd.getText().toString().trim();
+                String Fullname = name.getText().toString();
+                String phonenumber = phoneno.getText().toString();
+                SharedPreferences.Editor editor = sharedPreference.edit();
+                editor.putString(KEY_NAME,name.getText().toString());
+                SharedPreferences.Editor editor1 = sp.edit();
+                editor1.putString("Username", Fullname);
+                editor1.commit();
+                Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(),phoneno.getText().toString());
 
-                emailid.setError("Email is required.");
+                dao.add(faculty).addOnSuccessListener(suc->
+                {
+                    Toast.makeText(register_teacher.this, "Record Inserted", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(er->
+                {
+                    Toast.makeText(register_teacher.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+                if (TextUtils.isEmpty((email))) {
 
-            }
-            if (TextUtils.isEmpty(password)) {
-                pswd.setError("Password cant be empty.");
-            }
-            if (pswd.length() < 6) {
-                pswd.setError("Password must  be more than 6 characters.");
-                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    emailid.setError("Email is required.");
+
+                }
+                if(TextUtils.isEmpty(password)){
+                    pswd.setError("Password cant be empty.");
+                }
+                if(password.length()<6){
+                    pswd.setError("Password must  be more than 6 characters.");
+                }
+                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -87,16 +96,16 @@ public class register_teacher extends AppCompatActivity {
                             userID = mAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fstore.collection("users").document(userID);
 
-                            Map<String, Object> user = new HashMap<>();
+                            Map<String,Object> user = new HashMap<>();
                             user.put("Name", Fullname);
                             user.put("Email", email);
                             user.put("Phone No", phonenumber);
                             documentReference.set(user);
                             Intent intent = new Intent(register_teacher.this, Login.class);
                             intent.putExtra("NAME", Fullname);
-                            startActivity(new Intent(getApplicationContext(), Login.class));
-                        } else {
-                            Toast.makeText(register_teacher.this, "ERROR !!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),Login.class));
+                        }else {
+                            Toast.makeText(register_teacher.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

@@ -15,18 +15,18 @@ public class Applicant {
     public Applicant(String s, String name, String applicantid){
         this.name = name;
         this.applicantid=applicantid;
-        this.tenthboard=tenthboard;
-        this.twelfthboard=twelfthboard;
-        this.tenthlink = tenthlink;
-        this.twelfthlink = twelfthlink;
-        this.tenthpercentage = tenthpercentage;
-        this.twelfthpercentage = twelfthpercentage;
-        this.authorid = authorid;
-        this.course = course;
-        this.ugperc = ugperc;
-
+        this.tenthboard="";
+        this.twelfthboard="";
+        this.tenthlink = "";
+        this.twelfthlink = "";
+        this.tenthpercentage = "";
+        this.twelfthpercentage = "";
+        this.authorid ="";
+        this.course = "";
+        this.ugperc = "";
 
     }
+
 
     public String getName() {
         return name;
