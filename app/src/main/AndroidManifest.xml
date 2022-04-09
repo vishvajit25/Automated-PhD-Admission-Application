@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.College_PhD">
         <activity
+            android:name=".splash"
+            android:exported="false" />
+        <activity
+            android:name=".options"
+            android:exported="false" />
+        <activity
             android:name=".register_teacher"
             android:exported="false" />
         <activity
@@ -19,10 +25,10 @@
             android:theme="@style/Theme.College_PhD.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Register"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Login"
             android:exported="true">
@@ -34,10 +40,10 @@
         </activity>
         <activity
             android:name=".form1"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".form2"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>
