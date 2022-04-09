@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_dark"
     tools:context=".splash">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ourlogo" />
 
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/slider"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_centerInParent="true"
+        android:layout_height="250dp"
+        android:layout_marginTop="250dp"
         app:sliderAnimationDuration="600"
         app:sliderAutoCycleDirection="back_and_forth"
         app:sliderIndicatorAnimationDuration="600"
@@ -23,4 +30,23 @@
         app:sliderIndicatorSelectedColor="#5A5A5A"
         app:sliderIndicatorUnselectedColor="#FFF"
         app:sliderScrollTimeInSec="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/slider"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/front"
+        android:textColor="@color/white"
+        android:text="WELCOME TO \n PHD ADMISSION PORTAL"
+        android:textAlignment="center"
+        android:textSize="50dp" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_baseline_arrow_circle_right_24" />
+
 </RelativeLayout>
