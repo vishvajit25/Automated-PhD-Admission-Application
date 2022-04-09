@@ -11,13 +11,19 @@
         android:theme="@style/Theme.College_PhD">
         <activity
             android:name=".splash"
-            android:exported="false" />
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".options"
             android:exported="false" />
         <activity
             android:name=".register_teacher"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Navigation_drawer"
             android:exported="false"
@@ -32,11 +38,7 @@
         <activity
             android:name=".Login"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".form1"
