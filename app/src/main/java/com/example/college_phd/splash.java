@@ -1,8 +1,15 @@
 package com.example.college_phd;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.smarteist.autoimageslider.SliderView;
+
 import java.util.ArrayList;
 
 public class splash extends AppCompatActivity {
@@ -10,11 +17,21 @@ public class splash extends AppCompatActivity {
     String url1 = "drawable/bg_light.jpg";
     String url2 = "drawable/bg_light.jpg";
     String url3 = "drawable/bg_light.jpg";
+    Button next;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_splash);
+        next = findViewById(R.id.nextbutton);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (splash.this,options.class);
+                startActivity(intent);
+            }
+        });
 
         // we are creating array list for storing our image urls.
         ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
