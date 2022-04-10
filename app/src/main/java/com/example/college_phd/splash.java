@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +17,7 @@ public class splash extends AppCompatActivity {
     String url1 = "drawable/bg_light.jpg";
     String url2 = "drawable/bg_light.jpg";
     String url3 = "drawable/bg_light.jpg";
-    Button next;
+    ImageView next;
 
     @SuppressLint("WrongViewCast")
     @Override

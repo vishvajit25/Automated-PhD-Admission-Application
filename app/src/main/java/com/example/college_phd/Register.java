@@ -1,8 +1,6 @@
 package com.example.college_phd;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -35,8 +33,8 @@ public class Register extends AppCompatActivity {
     EditText pswd,emailid,phoneno,name;
     FirebaseFirestore fstore;
     String userID;
-    SharedPreferences sharedPreference;
-    SharedPreferences sp;
+//    SharedPreferences sharedPreference;
+//    SharedPreferences sp;
     DatabaseReference reff;
     private static final String SHARED_PREF_NAME = "mypref";
     private static final String KEY_NAME = "name";
@@ -61,11 +59,11 @@ public class Register extends AppCompatActivity {
         EditText name = (EditText) findViewById(R.id.name);
         TextView login = (TextView) findViewById(R.id.lghere);
         Button register = (Button) findViewById(R.id.rgbutton);
-        sp = getSharedPreferences("newsp", Context.MODE_PRIVATE);
-        sharedPreference = getSharedPreferences("mypref",MODE_PRIVATE);
-        SharedPreferences.Editor myEdit = sharedPreference.edit();
-        myEdit.putString("name", name.getText().toString());
-        myEdit.commit();
+//        sp = getSharedPreferences("newsp", Context.MODE_PRIVATE);
+//        sharedPreference = getSharedPreferences("mypref",MODE_PRIVATE);
+//        SharedPreferences.Editor myEdit = sharedPreference.edit();
+//        myEdit.putString("name", name.getText().toString());
+//        myEdit.commit();
         DAOapplicant dao = new DAOapplicant();
         dd4YouConfig = new DD4YouConfig();
         TextView textView = (TextView) findViewById(R.id.eid);
@@ -84,11 +82,11 @@ public class Register extends AppCompatActivity {
                 String uniqueid = textView.getText().toString();
                 String Fullname = name.getText().toString();
                 String phonenumber = phoneno.getText().toString();
-                SharedPreferences.Editor editor = sharedPreference.edit();
-                editor.putString(KEY_NAME,name.getText().toString());
-                SharedPreferences.Editor editor1 = sp.edit();
-                editor1.putString("Username", Fullname);
-                editor1.commit();
+//                SharedPreferences.Editor editor = sharedPreference.edit();
+//                editor.putString(KEY_NAME,name.getText().toString());
+//                SharedPreferences.Editor editor1 = sp.edit();
+//                editor1.putString("Username", Fullname);
+//                editor1.commit();
                 Applicant applicant = new Applicant(emailid.getText().toString(), name.getText().toString(),textView.getText().toString());
                 /*dao.add(applicant).addOnSuccessListener(suc->
                 {
@@ -113,7 +111,7 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
-                            userID = mAuth.getCurrentUser().getUid();
+//                            userID = mAuth.getCurrentUser().getUid();
                             /*DocumentReference documentReference = fstore.collection("users").document(userID);
 
                             Map<String,Object> user = new HashMap<>();
@@ -126,8 +124,9 @@ public class Register extends AppCompatActivity {
                             reff.child("Applicant").child(mAuth.getUid()).child("ApplicantID").setValue(uniqueid);
 
                             Intent intent = new Intent(Register.this, Login.class);
-                            intent.putExtra("NAME", Fullname);
-                            startActivity(new Intent(getApplicationContext(),Login.class));
+//                            intent.putExtra("NAME", Fullname);
+                            startActivity(intent);
+                            finish();
                         }else {
                             Toast.makeText(Register.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -138,7 +137,7 @@ public class Register extends AppCompatActivity {
         login.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(Register.this,Login.class));
             }
         });
     }

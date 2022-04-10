@@ -24,7 +24,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
-public class Login extends AppCompatActivity {
+public class login_teacher extends AppCompatActivity {
     EditText mEmail, mPassword;
     Button Login, teacher,student;
     Button register;
@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_teacher);
         forgetpass = findViewById(R.id.forgetpass);
         forgetpass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,14 +47,20 @@ public class Login extends AppCompatActivity {
 
         teacher = findViewById(R.id.teacher);
         student = findViewById(R.id.student_register);
-            student.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(Login.this, Register.class);
-                    startActivity(intent);
-                    finish();
-                }
-            });
+        /*student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(login_teacher.this, Register.class);
+                startActivity(new Intent(getApplicationContext(),Register.class));
+            }
+        });*/
+        teacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(login_teacher.this, register_teacher.class);
+                startActivity(new Intent(getApplicationContext(),register_teacher.class));
+            }
+        });
         mEmail = findViewById(R.id.mail);
         mPassword = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
@@ -87,17 +93,18 @@ public class Login extends AppCompatActivity {
                 }
                 if(password.length()<6){
                     mPassword.setError("Password must  be more than 6 characters.");
-            }
+                }
                 mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent (Login.this,Navigation_drawer.class);
-//                            intent.putExtra("NAME", Fullname);
+                            Toast.makeText(login_teacher.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent (login_teacher.this,MainActivity.class);
                             startActivity(intent);
+                            intent.putExtra("NAME", Fullname);
+
                         }else {
-                            Toast.makeText(Login.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login_teacher.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -153,17 +160,17 @@ public class Login extends AppCompatActivity {
                 {
                     // if isSuccessful then done message will be shown
                     // and you can change the password
-                    Toast.makeText(Login.this,"Done sent",Toast.LENGTH_LONG).show();
+                    Toast.makeText(login_teacher.this,"Done sent",Toast.LENGTH_LONG).show();
                 }
                 else {
-                    Toast.makeText(Login.this,"Error Occured",Toast.LENGTH_LONG).show();
+                    Toast.makeText(login_teacher.this,"Error Occured",Toast.LENGTH_LONG).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 loadingBar.dismiss();
-                Toast.makeText(Login.this,"Error Failed",Toast.LENGTH_LONG).show();
+                Toast.makeText(login_teacher.this,"Error Failed",Toast.LENGTH_LONG).show();
             }
         });
     }

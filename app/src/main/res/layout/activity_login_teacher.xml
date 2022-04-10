@@ -27,6 +27,12 @@
         android:textSize="30sp" />
 
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <EditText
         android:id="@+id/mail"
         android:layout_width="wrap_content"
@@ -100,7 +106,7 @@
 
 
     <Button
-        android:id="@+id/student_register"
+        android:id="@+id/teacher"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -110,17 +116,17 @@
         android:textColor="@color/black"
         tools:ignore="MissingConstraints" />
 
-    <!-- <Button
-         android:id="@+id/teacher"
-         android:layout_width="110dp"
-         android:layout_height="36dp"
-         android:layout_marginLeft="200dp"
-         android:background="b"
-         android:orientation="horizontal"
-         android:text="TEACHER"
-         android:textColor="@color/white"
-         tools:ignore="MissingConstraints"
-         tools:layout_editor_absoluteX="101dp"
-         tools:layout_editor_absoluteY="488dp" /> -->
+        <!-- <Button
+             android:id="@+id/teacher"
+             android:layout_width="110dp"
+             android:layout_height="36dp"
+             android:layout_marginLeft="200dp"
+             android:background="b"
+             android:orientation="horizontal"
+             android:text="TEACHER"
+             android:textColor="@color/white"
+             tools:ignore="MissingConstraints"
+             tools:layout_editor_absoluteX="101dp"
+             tools:layout_editor_absoluteY="488dp" /> -->
 
-</LinearLayout>
+ </LinearLayout>
