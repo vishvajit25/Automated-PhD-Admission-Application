@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.MainActivity_teacher">
+
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_dark"
+        android:id="@+id/ll"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:layout_centerHorizontal="true">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/permission"
+            android:layout_gravity="center"
+            android:layout_width="350dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="140dp"
+            android:layout_marginTop="200dp"
+            app:cardCornerRadius="4dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:alpha="0.15"
+                android:src="@drawable/bg4"
+                />
+            <TextView
+                android:id="@+id/personal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ASK FOR PERMISSIONS TO ACCESS APPLICATIONS"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sub"/>
+
+
+            <Button
+                android:id="@+id/req"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sub"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/black"
+                android:text="REQUEST"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+
+                android:textSize="20dp" />
+
+            <!--  <TextView
+                  android:id="@+id/appli_link"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:text="@string/fill"
+                  android:textAlignment="center"
+                  android:paddingTop="90dp"
+                  android:textSize="20dp"
+                  android:textColor="#FF0000ff"
+                  android:fontFamily="@font/sub"/> -->
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/search"
+            android:layout_gravity="center"
+            android:layout_width="350dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="140dp"
+            android:layout_marginTop="20dp"
+            card_view:cardCornerRadius="4dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:alpha="0.15"
+                android:src="@drawable/bg5"
+                />
+
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIEW APPLICATION "
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sub"/>
+
+            <Button
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sub"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/black"
+                android:text="VIEW"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--            android:id="@+id/appl_info"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_width="350dp"-->
+<!--            app:cardBackgroundColor="@color/white"-->
+<!--            android:layout_height="140dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            card_view:cardCornerRadius="4dp">-->
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:alpha="0.15"-->
+<!--                android:src="@drawable/bg3"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/info_text2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="User Activity : "-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:textSize="30dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:fontFamily="@font/sub"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/appli_link3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textAlignment="center"-->
+<!--                android:text="@string/view"-->
+<!--                android:paddingTop="0dp"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textColor="#FF0000ff"-->
+<!--                android:fontFamily="@font/sub"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/appli_link4"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:textAlignment="center"-->
+<!--                android:text="@string/download"-->
+<!--                android:paddingTop="90dp"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textColor="#FF0000ff"-->
+<!--                android:fontFamily="@font/sub"/>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/warning"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="!! YOU CANNOT EDIT THE APPLICATION AFTER SUBMITTED !!"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="#ff0000"-->
+<!--            android:textSize="20dp"-->
+<!--            android:fontFamily="@font/text"-->
+<!--            android:textStyle="bold"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteX="107dp"-->
+<!--            tools:layout_editor_absoluteY="524dp" />-->
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

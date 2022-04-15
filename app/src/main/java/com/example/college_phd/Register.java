@@ -36,8 +36,8 @@ public class Register extends AppCompatActivity {
 //    SharedPreferences sharedPreference;
 //    SharedPreferences sp;
     DatabaseReference reff;
-    private static final String SHARED_PREF_NAME = "mypref";
-    private static final String KEY_NAME = "name";
+//    private static final String SHARED_PREF_NAME = "mypref";
+//    private static final String KEY_NAME = "name";
     private static final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnm";
 
 
@@ -57,7 +57,7 @@ public class Register extends AppCompatActivity {
         EditText emailid = (EditText) findViewById(R.id.email);
         EditText phoneno = (EditText) findViewById(R.id.phno);
         EditText name = (EditText) findViewById(R.id.name);
-        TextView login = (TextView) findViewById(R.id.lghere);
+//        TextView login = (TextView) findViewById(R.id.lghere);
         Button register = (Button) findViewById(R.id.rgbutton);
 //        sp = getSharedPreferences("newsp", Context.MODE_PRIVATE);
 //        sharedPreference = getSharedPreferences("mypref",MODE_PRIVATE);
@@ -65,7 +65,6 @@ public class Register extends AppCompatActivity {
 //        myEdit.putString("name", name.getText().toString());
 //        myEdit.commit();
         DAOapplicant dao = new DAOapplicant();
-        dd4YouConfig = new DD4YouConfig();
         TextView textView = (TextView) findViewById(R.id.eid);
         button.setOnClickListener(new OnClickListener() {
                                       @Override
@@ -123,9 +122,9 @@ public class Register extends AppCompatActivity {
                             reff.child("Applicant").child(mAuth.getUid()).child("Name").setValue(Fullname);
                             reff.child("Applicant").child(mAuth.getUid()).child("ApplicantID").setValue(uniqueid);
 
-                            Intent intent = new Intent(Register.this, Login.class);
-//                            intent.putExtra("NAME", Fullname);
-                            startActivity(intent);
+//                            Intent intent = new Intent(Register.this, Login.class);
+////                            intent.putExtra("NAME", Fullname);
+//                            startActivity(intent);
                             finish();
                         }else {
                             Toast.makeText(Register.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -134,12 +133,13 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
-        login.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Register.this,Login.class));
-            }
-        });
+//        login.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(Register.this,Login.class));
+//            }
+//        });
+
     }
     private static String getRandomString(final int sizeOfRandomString)
     {

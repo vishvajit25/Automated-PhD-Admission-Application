@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment  {
 
         fa1 = (TextView) view.findViewById(R.id.fillapplication);
         fa2 = (TextView) view.findViewById(R.id.appli_link2);
-        va = (TextView) view.findViewById(R.id.appli_link3);
+        va = (TextView) view.findViewById(R .id.appli_link3);
         da = (TextView) view.findViewById(R.id.appli_link4);
 
 

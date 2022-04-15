@@ -5,6 +5,9 @@ public class Faculty {
     private String name;
     private String emailid;
     private String phoneno;
+    private boolean permission;
+
+
 
     public Faculty(String name, String emailid, String phoneno) {
         this.name = name;
@@ -35,4 +38,11 @@ public class Faculty {
     public void setPhoneno(String phoneno) {
         this.phoneno = phoneno;
     }
+    public boolean getPermission() {
+        return permission;
+    }
+    public void setPermission(boolean permission) {
+        this.permission = permission;
+    }
+
 }

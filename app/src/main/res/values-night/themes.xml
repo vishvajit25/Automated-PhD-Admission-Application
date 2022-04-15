@@ -19,7 +19,5 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.College_PhD.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.College_PhD.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 </resources>

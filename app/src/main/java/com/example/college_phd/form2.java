@@ -55,7 +55,7 @@ public class form2 extends AppCompatActivity {
                 android.R.layout.simple_selectable_list_item,board);
         tenth3.setAdapter(adapter);
         tenth3.setThreshold(1);
-        tenth3.setTextColor(Color.BLACK);
+        tenth3.setTextColor(Color.WHITE);
         tenth3.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -67,7 +67,7 @@ public class form2 extends AppCompatActivity {
                 android.R.layout.simple_selectable_list_item,board);
         twelfth3.setAdapter(adapter2);
         twelfth3.setThreshold(1);
-        twelfth3.setTextColor(Color.BLACK);
+        twelfth3.setTextColor(Color.WHITE);
         twelfth3.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -79,7 +79,7 @@ public class form2 extends AppCompatActivity {
                 android.R.layout.simple_selectable_list_item,courseopted);
         course.setAdapter(adapter3);
         course.setThreshold(1);
-        course.setTextColor(Color.BLACK);
+        course.setTextColor(Color.WHITE);
         course.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {

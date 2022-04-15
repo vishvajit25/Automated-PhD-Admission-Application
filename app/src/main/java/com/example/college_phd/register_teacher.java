@@ -1,8 +1,6 @@
 package com.example.college_phd;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -30,11 +28,6 @@ public class register_teacher extends AppCompatActivity {
     private FirebaseAuth mAuth;
     FirebaseFirestore fstore;
     String userID;
-    SharedPreferences sharedPreference;
-    SharedPreferences sp;
-    private static final String SHARED_PREF_NAME = "mypref";
-    private static final String KEY_NAME = "name";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +44,6 @@ public class register_teacher extends AppCompatActivity {
         pswd = findViewById(R.id.password);
         phoneno = findViewById(R.id.phno);
         name = findViewById(R.id.name);
-        sp = getSharedPreferences("newsp", Context.MODE_PRIVATE);
-        sharedPreference = getSharedPreferences("mypref", MODE_PRIVATE);
-        SharedPreferences.Editor myEdit = sharedPreference.edit();
-        myEdit.putString("name", name.getText().toString());
-        myEdit.commit();
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,16 +51,11 @@ public class register_teacher extends AppCompatActivity {
                 String password = pswd.getText().toString().trim();
                 String Fullname = name.getText().toString();
                 String phonenumber = phoneno.getText().toString();
-                SharedPreferences.Editor editor = sharedPreference.edit();
-                editor.putString(KEY_NAME,name.getText().toString());
-                SharedPreferences.Editor editor1 = sp.edit();
-                editor1.putString("Username", Fullname);
-                editor1.commit();
                 Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(),phoneno.getText().toString());
 
                 dao.add(faculty).addOnSuccessListener(suc->
                 {
-                    Toast.makeText(register_teacher.this, "Record Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(register_teacher.this, "Registering", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(er->
                 {
                     Toast.makeText(register_teacher.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
@@ -101,9 +84,8 @@ public class register_teacher extends AppCompatActivity {
                             user.put("Email", email);
                             user.put("Phone No", phonenumber);
                             documentReference.set(user);
-                            Intent intent = new Intent(register_teacher.this, Login.class);
-                            intent.putExtra("NAME", Fullname);
-                            startActivity(new Intent(getApplicationContext(),Login.class));
+                            Intent intent = new Intent(register_teacher.this, login_teacher.class);
+                            startActivity(new Intent(getApplicationContext(),login_teacher.class));
                         }else {
                             Toast.makeText(register_teacher.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

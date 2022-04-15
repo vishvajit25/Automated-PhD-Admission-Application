@@ -13,10 +13,10 @@
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="260dp"
-        android:fontFamily="@font/front"
-        android:text="YOU ARE : "
+        android:fontFamily="@font/front1"
+        android:text="LOGIN AS "
         android:textColor="@color/white"
-        android:textSize="40dp"
+        android:textSize="30dp"
         tools:ignore="MissingConstraints" />
 
     <RadioGroup

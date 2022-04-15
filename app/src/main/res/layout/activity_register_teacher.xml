@@ -34,6 +34,7 @@
         android:ems="10"
         android:gravity="center_vertical|start"
         android:hint="NAME"
+        android:textColor="@color/white"
         android:inputType="textPersonName" />
 
     <EditText
@@ -46,6 +47,7 @@
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="EMAIL"
+        android:textColor="@color/white"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/phno"
         app:layout_constraintStart_toStartOf="@+id/name"
@@ -59,6 +61,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="12dp"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:ems="10"
         android:hint="PHONE NO"
         android:inputType="phone"
@@ -72,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
+        android:textColor="@color/white"
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="12dp"
         android:ems="10"

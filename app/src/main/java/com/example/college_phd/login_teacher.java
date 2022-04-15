@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.MainActivity_teacher;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -99,9 +100,9 @@ public class login_teacher extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(login_teacher.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent (login_teacher.this,MainActivity.class);
+                            Intent intent = new Intent (login_teacher.this, MainActivity_teacher.class);
                             startActivity(intent);
-                            intent.putExtra("NAME", Fullname);
+
 
                         }else {
                             Toast.makeText(login_teacher.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();

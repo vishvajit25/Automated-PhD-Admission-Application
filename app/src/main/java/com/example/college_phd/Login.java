@@ -26,7 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 
 public class Login extends AppCompatActivity {
     EditText mEmail, mPassword;
-    Button Login, teacher,student;
+    Button Login, teacher, student;
     Button register;
     DatabaseReference reference;
     TextView mcreatebutton;
@@ -47,14 +47,14 @@ public class Login extends AppCompatActivity {
 
         teacher = findViewById(R.id.teacher);
         student = findViewById(R.id.student_register);
-            student.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(Login.this, Register.class);
-                    startActivity(intent);
-                    finish();
-                }
-            });
+        student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Register.class);
+                startActivity(intent);
+//                    finish();
+            }
+        });
         mEmail = findViewById(R.id.mail);
         mPassword = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
@@ -82,47 +82,48 @@ public class Login extends AppCompatActivity {
                     mEmail.setError("Email is required.");
 
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     mPassword.setError("Password cant be empty.");
                 }
-                if(password.length()<6){
+                if (password.length() < 6) {
                     mPassword.setError("Password must  be more than 6 characters.");
-            }
-                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                }
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent (Login.this,Navigation_drawer.class);
+                            Intent intent = new Intent(Login.this, Navigation_drawer.class);
 //                            intent.putExtra("NAME", Fullname);
                             startActivity(intent);
-                        }else {
-                            Toast.makeText(Login.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Login.this, "ERROR !!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
         });
     }
+
     private void showRecoverPasswordDialog() {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Recover Password");
-        LinearLayout linearLayout=new LinearLayout(this);
-        final EditText emailet= new EditText(this);
+        LinearLayout linearLayout = new LinearLayout(this);
+        final EditText emailet = new EditText(this);
 
         // write the email using which you registered
         emailet.setText("Email");
         emailet.setMinEms(16);
         emailet.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         linearLayout.addView(emailet);
-        linearLayout.setPadding(10,10,10,10);
+        linearLayout.setPadding(10, 10, 10, 10);
         builder.setView(linearLayout);
 
         // Click on Recover and a email will be sent to your registered email id
         builder.setPositiveButton("Recover", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String email=emailet.getText().toString().trim();
+                String email = emailet.getText().toString().trim();
                 beginRecovery(email);
             }
         });
@@ -149,21 +150,19 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 loadingBar.dismiss();
-                if(task.isSuccessful())
-                {
+                if (task.isSuccessful()) {
                     // if isSuccessful then done message will be shown
                     // and you can change the password
-                    Toast.makeText(Login.this,"Done sent",Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(Login.this,"Error Occured",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Done sent", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(Login.this, "Error Occured", Toast.LENGTH_LONG).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 loadingBar.dismiss();
-                Toast.makeText(Login.this,"Error Failed",Toast.LENGTH_LONG).show();
+                Toast.makeText(Login.this, "Error Failed", Toast.LENGTH_LONG).show();
             }
         });
     }

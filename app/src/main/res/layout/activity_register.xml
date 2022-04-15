@@ -135,16 +135,16 @@
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />
 
-    <TextView
-        android:id="@+id/lghere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Already Registered? Login Here"
-        android:textColor="#000000"
-        tools:layout_editor_absoluteX="107dp"
-        android:layout_gravity="center"
-        tools:layout_editor_absoluteY="524dp"
-        android:linksClickable="true"
-        tools:ignore="MissingConstraints" />
+<!--    <TextView-->
+<!--        android:id="@+id/lghere"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Already Registered? Login Here"-->
+<!--        android:textColor="#000000"-->
+<!--        tools:layout_editor_absoluteX="107dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        tools:layout_editor_absoluteY="524dp"-->
+<!--        android:linksClickable="true"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
 </LinearLayout>

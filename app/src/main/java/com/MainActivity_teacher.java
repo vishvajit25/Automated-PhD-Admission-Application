@@ -1,10 +1,12 @@
-package com.example.college_phd;
+package com;
+
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -12,16 +14,17 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.college_phd.databinding.ActivityNavigationDrawerBinding;
+import com.example.college_phd.R;
+import com.example.college_phd.databinding.ActivityNavigationDrawerTBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Navigation_drawer extends AppCompatActivity {
+public class MainActivity_teacher extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityNavigationDrawerBinding binding;
+    private @NonNull ActivityNavigationDrawerTBinding binding;
     private View hview;
     private TextView user;
     private DatabaseReference ref;
@@ -33,10 +36,11 @@ public class Navigation_drawer extends AppCompatActivity {
 
         fAuth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference();
-        binding = ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
+        binding = ActivityNavigationDrawerTBinding.inflate(getLayoutInflater());
+//                ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-       setSupportActionBar(binding.appBarNavigationDrawer.toolbar);
+        setSupportActionBar(binding.appBarMain.toolbar2);
         /* binding.appBarNavigationDrawer.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,8 +48,8 @@ public class Navigation_drawer extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView =  binding.navView;
+        DrawerLayout drawer = binding.drawerLayoutT;
+        NavigationView navigationView =  binding.navViewT;
         hview = navigationView.getHeaderView(0);
         user = hview.findViewById(R.id.user);
         //==================================================================
@@ -80,12 +84,12 @@ public class Navigation_drawer extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_inst, R.id.nav_faq)
+                R.id.nav_teacher, R.id.nav_faq_teacher)
                 .setOpenableLayout(drawer)
                 .build();
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation_drawer);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_teacher);
+        NavigationUI.setupActionBarWithNavController(MainActivity_teacher.this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
@@ -98,7 +102,7 @@ public class Navigation_drawer extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation_drawer);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_teacher);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

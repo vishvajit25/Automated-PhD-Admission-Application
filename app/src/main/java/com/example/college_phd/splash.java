@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class splash extends AppCompatActivity {
     // Urls of our images.
-    String url1 = "drawable/bg_light.jpg";
-    String url2 = "drawable/bg_light.jpg";
-    String url3 = "drawable/bg_light.jpg";
+    String url1 = "https://static.wikia.nocookie.net/naruto/images/d/d6/Naruto_Part_I.png/revision/latest?cb=20210223094656";
+    String url2 = "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png/revision/latest?cb=20170628120149";
+    String url3 = "https://static.wikia.nocookie.net/naruto/images/1/13/Sasuke_Part_2.png/revision/latest/scale-to-width-down/300?cb=20170716092003";
     ImageView next;
 
     @SuppressLint("WrongViewCast")

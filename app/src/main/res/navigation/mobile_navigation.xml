@@ -27,4 +27,5 @@
         android:name="com.example.college_phd.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/faq_fragment" />
+
 </navigation>

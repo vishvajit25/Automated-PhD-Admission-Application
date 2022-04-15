@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".form2"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".form2">
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark"
     android:id="@+id/form2"
-    android:paddingTop="10sp"
     android:orientation="vertical"
-    android:gravity="center_vertical|start"
     android:paddingBottom="10dp"
     android:layout_centerHorizontal="true">
+
 
     <TextView
         android:id="@+id/form2title"
@@ -23,40 +23,56 @@
         android:fontFamily="@font/title"
         android:gravity="center_horizontal"
         android:text="Educational Records : "
+        android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:textColor="#000000"
+        android:textColor="@color/white"
         android:textSize="30sp" />
 
-
+    <TextView
+        android:id="@+id/tenthtitle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/title"
+        android:gravity="center_horizontal"
+        android:text="10th STD DETAILS : "
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
     <AutoCompleteTextView
         android:id="@+id/TextView_tenth"
-        android:layout_width="211dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="1dp"
-
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white"
         android:dropDownWidth="211dp"
         android:hint="10th BOARD"
         android:inputType="text"/>
     <EditText
         android:id="@+id/tenth"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
+        android:textColor="@color/white"
         android:gravity="center_vertical|start"
         android:hint="10th STD %"
         android:inputType="numberDecimal" />
     <EditText
         android:id="@+id/tenthlink"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:textSize="16dp"
         android:width="211dp"
+        android:textColor="@color/white"
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
@@ -64,12 +80,23 @@
         android:inputType="text"
          />
 
-
+    <TextView
+        android:id="@+id/twelfthtitle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/title"
+        android:gravity="center_horizontal"
+        android:text="12th STD DETAILS : "
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
     <AutoCompleteTextView
         android:id="@+id/TextView_twelfth"
         android:layout_width="211dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="1dp"
@@ -84,6 +111,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:ems="10"
+        android:textColor="@color/white"
         android:gravity="center_vertical|start"
         android:hint="12th STD %"
         android:inputType="numberDecimal" />
@@ -95,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
+        android:textColor="@color/white"
         android:textSize="16dp"
         android:width="211dp"
         android:layout_marginLeft="1dp"
@@ -108,6 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:layout_marginStart="1dp"
         android:textSize="16dp"
         android:width="211dp"
@@ -122,6 +152,7 @@
         android:layout_width="211dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/white"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="1dp"
@@ -136,6 +167,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:textSize="13.5dp"
+        android:textColor="@color/white"
         android:width="211dp"
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="16dp"
@@ -168,7 +200,5 @@
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />
 
-
-
-
 </LinearLayout>
+</ScrollView>
