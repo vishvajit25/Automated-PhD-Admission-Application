@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark"
+    tools:context=".Register"
+    android:id="@+id/login_admin"
+    android:paddingTop="10sp"
+    android:orientation="vertical"
+    android:gravity="center_vertical|start"
+    android:paddingBottom="10dp"
+    android:layout_centerHorizontal="true">
+
+    <TextView
+        android:id="@+id/logintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/title"
+        android:gravity="center_horizontal"
+        android:text="LOGIN"
+        android:layout_gravity="center"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:gravity="center_vertical|start"
+        android:textColor="@color/white"
+        android:hint="EMAIL"
+        android:inputType="textPersonName" />
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="PASSWORD"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="205dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:text="LOGIN"
+        android:textColor="@color/black"
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#FFFFFF"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="488dp" />
+    <Button
+        android:id="@+id/admin"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="horizontal"
+        android:text="CREATE ACCOUNT"
+        android:textColor="@color/black"
+        tools:ignore="MissingConstraints" />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/forgetpass"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:textSize="15dp"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:text="Forgot Password"/>-->
+<!--    &lt;!&ndash;<Button-->
+<!--        android:id="@+id/regbutton"-->
+<!--        android:layout_width="205dp"-->
+<!--        android:layout_height="36dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:text="New Here? Create Account"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="101dp"-->
+<!--        tools:layout_editor_absoluteY="488dp" />&ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/createacc"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="New Here? Create Account"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="15sp" />-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/teacher"-->
+<!--        android:layout_width="170dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:backgroundTint="#FFFFFF"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:text="CREATE ACCOUNT"-->
+<!--        android:textColor="@color/black"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+<!--    &lt;!&ndash; <Button-->
+<!--         android:id="@+id/teacher"-->
+<!--         android:layout_width="110dp"-->
+<!--         android:layout_height="36dp"-->
+<!--         android:layout_marginLeft="200dp"-->
+<!--         android:background="b"-->
+<!--         android:orientation="horizontal"-->
+<!--         android:text="TEACHER"-->
+<!--         android:textColor="@color/white"-->
+<!--         tools:ignore="MissingConstraints"-->
+<!--         tools:layout_editor_absoluteX="101dp"-->
+<!--         tools:layout_editor_absoluteY="488dp" /> &ndash;&gt;-->
+
+</LinearLayout>

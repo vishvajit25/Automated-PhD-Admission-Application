@@ -126,6 +126,7 @@ public class Register extends AppCompatActivity {
 ////                            intent.putExtra("NAME", Fullname);
 //                            startActivity(intent);
                             finish();
+                            FirebaseAuth.getInstance().signOut();
                         }else {
                             Toast.makeText(Register.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

@@ -47,10 +47,10 @@ public class options extends AppCompatActivity {
                         Intent intent2 = new Intent (options.this,login_teacher.class);
                         startActivity(intent2);
                         break;
-                    /*case R.id.rb3:
-                        Intent intent3 = new Intent (options.this,Login.class);
+                    case R.id.rb3:
+                        Intent intent3 = new Intent (options.this,login_admin.class);
                         startActivity(intent3);
-                        break; */
+                        break;
                 }
             }
         });

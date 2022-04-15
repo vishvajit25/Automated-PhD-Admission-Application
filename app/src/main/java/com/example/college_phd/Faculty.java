@@ -9,7 +9,7 @@ public class Faculty {
 
 
 
-    public Faculty(String name, String emailid, String phoneno) {
+    public Faculty(String emailid, String name, String phoneno) {
         this.name = name;
         this.emailid = emailid;
         this.phoneno = phoneno;

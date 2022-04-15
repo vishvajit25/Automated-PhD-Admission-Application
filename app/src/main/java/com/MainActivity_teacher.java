@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -17,6 +18,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.college_phd.R;
 import com.example.college_phd.databinding.ActivityNavigationDrawerTBinding;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,6 +31,7 @@ public class MainActivity_teacher extends AppCompatActivity {
     private TextView user;
     private DatabaseReference ref;
     private FirebaseAuth fAuth;
+    MenuView.ItemView logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,32 +42,39 @@ public class MainActivity_teacher extends AppCompatActivity {
         binding = ActivityNavigationDrawerTBinding.inflate(getLayoutInflater());
 //                ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.appBarMain.toolbar2);
-        /* binding.appBarNavigationDrawer.fab.setOnClickListener(new View.OnClickListener() {
+         binding.appBarMain.toolbar2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });*/
+        });
         DrawerLayout drawer = binding.drawerLayoutT;
         NavigationView navigationView =  binding.navViewT;
         hview = navigationView.getHeaderView(0);
-        user = hview.findViewById(R.id.user);
+        user = hview.findViewById(R.id.user_t);
+        logout = hview.findViewById(R.id.logout_t);
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), login_teacher.class));
+//            }
+//        });
         //==================================================================
-        /*ref.child("Applicant").child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String usernameInDB=snapshot.child("name").getValue().toString();
-                user.setText(usernameInDB);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
+//        ref.child("Faulty").child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+////                String facultyname = snapshot.child("name").getValue().toString();
+//                String nameInDB=snapshot.child("name").getValue().toString();
+//                user.setText(nameInDB);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
         //=======================================================================
 
 

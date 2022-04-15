@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark"
+    tools:context=".Register"
+    android:id="@+id/ll"
+    android:paddingTop="10sp"
+    android:orientation="vertical"
+    android:gravity="center_vertical|start"
+    android:paddingBottom="10dp"
+    android:layout_centerHorizontal="true">
+
+    <TextView
+        android:id="@+id/registertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/title"
+        android:gravity="center_horizontal"
+        android:text="REGISTER"
+        android:layout_gravity="center"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="EMAIL"
+        android:textColor="@color/white"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/phno"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="PASSWORD"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <Button
+        android:id="@+id/rgadmin"
+        android:layout_width="205dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:text="REGISTER"
+        android:textColor="@color/black"
+        android:backgroundTint="#FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="488dp" />
+
+
+</LinearLayout>

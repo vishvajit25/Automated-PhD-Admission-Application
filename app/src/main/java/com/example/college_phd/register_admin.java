@@ -1,6 +1,5 @@
 package com.example.college_phd;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,51 +14,35 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class register_teacher extends AppCompatActivity {
-    Button register;
-    EditText pswd, emailid, phoneno, name;
-    public static final String TAG = "";
+public class register_admin extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    Button register;
+    EditText pswd,emailid;
     FirebaseFirestore fstore;
-    String userID;
+    DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_teacher);
+        setContentView(R.layout.activity_register_admin);
+        reff= FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), Register.class));
-            finish();
-        }
-        DAOFaculty dao = new DAOFaculty();
-        register = findViewById(R.id.rgtbutton);
-        emailid = findViewById(R.id.email);
-        pswd = findViewById(R.id.password);
-        phoneno = findViewById(R.id.phno);
-        name = findViewById(R.id.name);
+        EditText pswd = (EditText) findViewById(R.id.password);
+        EditText emailid = (EditText) findViewById(R.id.email);
+        Button register = (Button) findViewById(R.id.rgadmin);
+        DAOadmin dao = new DAOadmin();
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = emailid.getText().toString().trim();
                 String password = pswd.getText().toString().trim();
-                String Fullname = name.getText().toString();
-                String phonenumber = phoneno.getText().toString();
-                Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(),phoneno.getText().toString());
 
-                dao.add(faculty).addOnSuccessListener(suc->
-                {
-                    Toast.makeText(register_teacher.this, "Registering", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(er->
-                {
-                    Toast.makeText(register_teacher.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+                Admin admin = new Admin(emailid.getText().toString());
+
                 if (TextUtils.isEmpty((email))) {
 
                     emailid.setError("Email is required.");
@@ -75,20 +58,25 @@ public class register_teacher extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(register_teacher.this, "User Created", Toast.LENGTH_SHORT).show();
-                            userID = mAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fstore.collection("users").document(userID);
+                            Toast.makeText(register_admin.this, "User Created", Toast.LENGTH_SHORT).show();
+//                            userID = mAuth.getCurrentUser().getUid();
+                            /*DocumentReference documentReference = fstore.collection("users").document(userID);
 
                             Map<String,Object> user = new HashMap<>();
                             user.put("Name", Fullname);
                             user.put("Email", email);
                             user.put("Phone No", phonenumber);
-                            documentReference.set(user);
-                            Intent intent = new Intent(register_teacher.this, login_teacher.class);
-                            startActivity(new Intent(getApplicationContext(),login_teacher.class));
+                            final Object application_id = user.put("Application ID", uniqueid);
+                            documentReference.set(user);*/
+                            reff.child("Admin").child(mAuth.getUid()).child("Email").setValue(email);
+
+//                            Intent intent = new Intent(Register.this, Login.class);
+////                            intent.putExtra("NAME", Fullname);
+//                            startActivity(intent);
+                            finish();
                             FirebaseAuth.getInstance().signOut();
                         }else {
-                            Toast.makeText(register_teacher.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(register_admin.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

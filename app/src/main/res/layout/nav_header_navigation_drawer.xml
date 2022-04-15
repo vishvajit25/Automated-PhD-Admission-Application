@@ -22,7 +22,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:id="@+id/user"
+        android:id="@+id/user_t"
         android:layout_toRightOf="@id/imageView"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
