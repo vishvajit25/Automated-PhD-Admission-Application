@@ -62,12 +62,12 @@ public class MainActivity_teacher extends AppCompatActivity {
 //            }
 //        });
         //==================================================================
-//        ref.child("Faulty").child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+//        ref.addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot snapshot) {
-////                String facultyname = snapshot.child("name").getValue().toString();
-//                String nameInDB=snapshot.child("name").getValue().toString();
-//                user.setText(nameInDB);
+////              String facultyname = snapshot.child("name").getValue().toString();
+//                String userstring = snapshot.child("Faculty").child(fAuth.getUid()).child("name").getValue().toString();
+//                user.setText(userstring);
 //            }
 //
 //            @Override

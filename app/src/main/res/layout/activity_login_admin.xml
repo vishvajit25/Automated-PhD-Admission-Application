@@ -81,6 +81,7 @@
         android:backgroundTint="#FFFFFF"
         android:orientation="horizontal"
         android:text="CREATE ACCOUNT"
+        android:alpha="0"
         android:textColor="@color/black"
         tools:ignore="MissingConstraints" />
 <!--    <TextView-->

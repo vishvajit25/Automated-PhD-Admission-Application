@@ -12,6 +12,7 @@
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1235" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1975" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/font/days_one.xml" value="0.28020833333333334" />
+        <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.1125" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_bottom_bar.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_form1.xml" value="0.264" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_form2.xml" value="0.2" />
@@ -28,6 +29,7 @@
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_register_admin.xml" value="0.1125" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_register_teacher.xml" value="0.24003623188405798" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_splash.xml" value="0.152" />
+        <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_status.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_subject.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/app_bar_main.xml" value="0.22871376811594202" />
@@ -40,7 +42,7 @@
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/fragment_notifications.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/fragment_slideshow.xml" value="0.24003623188405798" />
-        <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/fragment_teacher_dashboard.xml" value="0.1125" />
+        <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/fragment_teacher_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/nav_header_main.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.2" />
         <entry key="..\:/Users/vishv/AndroidStudioProjects/College_PhD/app/src/main/res/layout/slider_layout.xml" value="0.10989583333333333" />

@@ -15,11 +15,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class register_teacher extends AppCompatActivity {
     Button register;
@@ -28,6 +27,8 @@ public class register_teacher extends AppCompatActivity {
     private FirebaseAuth mAuth;
     FirebaseFirestore fstore;
     String userID;
+    DatabaseReference ref;
+    Boolean permission_faculty;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +39,14 @@ public class register_teacher extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), Register.class));
             finish();
         }
+        permission_faculty = false;
         DAOFaculty dao = new DAOFaculty();
         register = findViewById(R.id.rgtbutton);
         emailid = findViewById(R.id.email);
         pswd = findViewById(R.id.password);
         phoneno = findViewById(R.id.phno);
         name = findViewById(R.id.name);
+        ref = FirebaseDatabase.getInstance().getReference();
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +54,8 @@ public class register_teacher extends AppCompatActivity {
                 String password = pswd.getText().toString().trim();
                 String Fullname = name.getText().toString();
                 String phonenumber = phoneno.getText().toString();
-                Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(),phoneno.getText().toString());
+                String permission = permission_faculty.toString();
+                Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(),phoneno.getText().toString(), permission_faculty);
 
                 dao.add(faculty).addOnSuccessListener(suc->
                 {
@@ -79,11 +83,15 @@ public class register_teacher extends AppCompatActivity {
                             userID = mAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fstore.collection("users").document(userID);
 
-                            Map<String,Object> user = new HashMap<>();
-                            user.put("Name", Fullname);
-                            user.put("Email", email);
-                            user.put("Phone No", phonenumber);
-                            documentReference.set(user);
+//                            Map<String,Object> user = new HashMap<>();
+//                            user.put("Name", Fullname);
+//                            user.put("Email", email);
+//                            user.put("Phone No", phonenumber);
+//                            documentReference.set(user);
+                            ref.child("Faculty").child(mAuth.getUid()).child("Name").setValue(Fullname);
+                            ref.child("Faculty").child(mAuth.getUid()).child("EmailID").setValue(email);
+                            ref.child("Faculty").child(mAuth.getUid()).child("Phone No").setValue(phonenumber);
+                            ref.child("Faculty").child(mAuth.getUid()).child("permission").setValue(permission);
                             Intent intent = new Intent(register_teacher.this, login_teacher.class);
                             startActivity(new Intent(getApplicationContext(),login_teacher.class));
                             FirebaseAuth.getInstance().signOut();

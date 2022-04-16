@@ -11,6 +11,12 @@
         android:theme="@style/Theme.College_PhD"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".admin_dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".status"
+            android:exported="false" />
+        <activity
             android:name=".register_admin"
             android:exported="false" />
         <activity

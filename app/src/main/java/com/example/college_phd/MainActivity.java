@@ -5,6 +5,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -15,8 +16,11 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.college_phd.databinding.ActivityNavigationDrawerBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +52,19 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView =  binding.navView;
         hview = navigationView.getHeaderView(0);
         user = hview.findViewById(R.id.user);
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//              String facultyname = snapshot.child("name").getValue().toString();
+                String userstring = snapshot.child("Applicant").child(fAuth.getUid()).child("Name").getValue().toString();
+                user.setText(userstring);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         //==================================================================
         /*ref.child("Applicant").child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
