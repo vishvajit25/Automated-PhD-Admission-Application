@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.college_phd.R;
 import com.example.college_phd.info;
-import com.example.college_phd.subject;
+import com.example.college_phd.recycler_open;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,7 +38,6 @@ public class teacher_dashboard_frag extends Fragment  {
         ref = FirebaseDatabase.getInstance().getReference();
         fAuth = FirebaseAuth.getInstance();
         viewbutton = (Button) view.findViewById(R.id.view);
-        Toast.makeText(getContext(), fAuth.getUid(), Toast.LENGTH_SHORT).show();
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -69,7 +67,7 @@ public class teacher_dashboard_frag extends Fragment  {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), subject.class);
+                Intent intent = new Intent(getActivity(), recycler_open.class);
                 startActivity(intent);
             }
         });

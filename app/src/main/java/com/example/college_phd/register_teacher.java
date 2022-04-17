@@ -57,13 +57,13 @@ public class register_teacher extends AppCompatActivity {
                 String permission = permission_faculty.toString();
                 Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(),phoneno.getText().toString(), permission_faculty);
 
-                dao.add(faculty).addOnSuccessListener(suc->
-                {
-                    Toast.makeText(register_teacher.this, "Registering", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(er->
-                {
-                    Toast.makeText(register_teacher.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+//                dao.add(faculty).addOnSuccessListener(suc->
+//                {
+//                    Toast.makeText(register_teacher.this, "Registering", Toast.LENGTH_SHORT).show();
+//                }).addOnFailureListener(er->
+//                {
+//                    Toast.makeText(register_teacher.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+//                });
                 if (TextUtils.isEmpty((email))) {
 
                     emailid.setError("Email is required.");
