@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.college_phd.R;
 import com.example.college_phd.info;
-import com.example.college_phd.recycler_open;
+import com.example.college_phd.userlist;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -67,8 +67,10 @@ public class teacher_dashboard_frag extends Fragment  {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), recycler_open.class);
-                startActivity(intent);
+                Intent i = new Intent(getActivity(), userlist.class);
+                startActivity(i);
+
+
             }
         });
 

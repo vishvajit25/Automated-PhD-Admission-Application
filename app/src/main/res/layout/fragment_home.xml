@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textAlignment="center"
-                android:text="@string/download"
+                android:text="@string/status"
                 android:paddingTop="90dp"
                 android:textSize="20dp"
                 android:textColor="#FF0000ff"

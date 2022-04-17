@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".info">
+    android:background="@drawable/bg_dark"
+    tools:context=".info"
+    android:id="@+id/ll"
+    android:paddingTop="140sp"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:layout_centerHorizontal="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/infotext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/title"
+        android:gravity="center_horizontal"
+        android:text="YOUR REQUEST HAS BEEN PROCESSED ."
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:gravity="center_horizontal" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+
+        <ImageView
+            android:id="@+id/prevbutton"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+    </RelativeLayout>
+</LinearLayout>

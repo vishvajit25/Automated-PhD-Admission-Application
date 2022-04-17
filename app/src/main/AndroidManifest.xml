@@ -29,7 +29,7 @@
             android:name=".login_admin"
             android:exported="false" />
         <activity
-            android:name="com.MainActivity_teacher"
+            android:name=".MainActivity_teacher"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.College_PhD.NoActionBar" />

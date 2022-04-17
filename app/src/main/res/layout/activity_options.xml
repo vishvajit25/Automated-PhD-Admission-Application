@@ -109,12 +109,15 @@
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/rg"
         android:src="@drawable/ic_baseline_android_24" />
+
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/prevbutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/prevbutton"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
         android:src="@drawable/ic_baseline_arrow_circle_left_24" />
 
 

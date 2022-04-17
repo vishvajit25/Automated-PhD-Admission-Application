@@ -114,7 +114,8 @@
                 android:backgroundTint="@color/black"
                 android:text="VIEW"
                 android:clickable="false"
-                android:alpha="0.5"
+                android:enabled="false"
+                android:alpha="0"
                 android:textAlignment="center"
                 android:textColor="@color/white"
 

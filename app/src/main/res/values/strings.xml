@@ -14,6 +14,7 @@
     <string name="fill"><u>FILL APPLICATION</u></string>
     <string name="view"><u>VIEW APPLICATION</u></string>
     <string name="download"><u>DOWNLOAD APPLICATION</u></string>
+    <string name="status"><u>CHECK STATUS</u></string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
 

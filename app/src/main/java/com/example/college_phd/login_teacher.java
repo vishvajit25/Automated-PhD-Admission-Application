@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +18,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.MainActivity_teacher;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -33,6 +33,7 @@ public class login_teacher extends AppCompatActivity {
     TextView mcreatebutton;
     TextView forgetpass;
     FirebaseAuth mAuth;
+    ImageView prev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,14 @@ public class login_teacher extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Register.class));
             }
         });*/
+        prev = findViewById(R.id.prevbutton);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (login_teacher.this,options.class);
+                startActivity(intent);
+            }
+        });
         teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

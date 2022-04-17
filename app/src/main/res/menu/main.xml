@@ -2,8 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/logout_t"
+        android:id="@+id/logoutt"
         android:orderInCategory="100"
         android:title="LOGOUT"
         app:showAsAction="never" />
+
 </menu>

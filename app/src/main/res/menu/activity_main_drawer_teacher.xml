@@ -3,19 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group>
         <item
-            android:id="@+id/nav_teacher"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_teacherhome"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="TEACHER HOME" />
 
         <item
             android:id="@+id/nav_inst"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_speaker_notes_24"
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_faq"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_question_answer_24"
             android:title="@string/menu_slideshow" />
     </group>
 </menu>

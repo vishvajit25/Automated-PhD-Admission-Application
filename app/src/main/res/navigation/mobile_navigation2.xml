@@ -8,11 +8,16 @@
     <fragment
         android:id="@+id/nav_teacher"
         android:name="com.example.college_phd.ui.teacher_dashboard_frag.teacher_dashboard_frag"
-        android:label="Teacher HOME"
+        android:label="HOME"
         tools:layout="@layout/activity_teacher_dashboard" />
     <fragment
         android:id="@+id/nav_faq_teacher"
-        android:name="com.example.college_phd.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/faq_fragment" />
+        android:name="com.example.college_phd.ui.faq.faq"
+        android:label="FAQ"
+        tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/nav_inst"
+        android:name="com.example.college_phd.ui.gallery.GalleryFragment"
+        android:label="INSTRUCTIONS"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>

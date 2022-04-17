@@ -45,11 +45,13 @@
         android:textStyle="normal" />
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/nextbutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/nextbutton"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
         android:src="@drawable/ic_baseline_arrow_circle_right_48" />
 
 </RelativeLayout>
