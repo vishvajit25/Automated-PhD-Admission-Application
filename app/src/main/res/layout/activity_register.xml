@@ -23,7 +23,7 @@
         android:text="REGISTER"
         android:layout_gravity="center"
         android:layout_marginTop="@android:dimen/app_icon_size"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="30sp" />
 
     <EditText
@@ -35,6 +35,7 @@
         android:gravity="center_vertical|start"
         android:hint="NAME"
         android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:inputType="textPersonName" />
 
     <EditText
@@ -44,6 +45,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
+        android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:layout_marginBottom="16dp"
         android:ems="10"
@@ -62,6 +64,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="12dp"
         android:layout_gravity="center"
+        android:textColorHint="@color/black"
         android:ems="10"
         android:hint="PHONE NO"
         android:inputType="phone"
@@ -73,6 +76,7 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:textColor="@color/black"
@@ -93,6 +97,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="12dp"
         android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:ems="10"
         android:textSize="20dp"
         android:hint="APPLICATION ID"
@@ -116,8 +121,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="Generate Unique ID"
-        android:backgroundTint="#ffffff"
-        android:textColor="@color/black"
+        android:backgroundTint="#000000"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,8 +134,8 @@
         android:layout_height="36dp"
         android:layout_gravity="center"
         android:text="REGISTER"
-        android:textColor="@color/black"
-        android:backgroundTint="#FFFFFF"
+        android:textColor="@color/white"
+        android:backgroundTint="#000000"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />

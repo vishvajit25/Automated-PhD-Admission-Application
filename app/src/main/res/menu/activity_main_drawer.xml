@@ -9,7 +9,6 @@
             android:icon="@drawable/home_white"
             android:title="@string/menu_home"
             android:iconTint="@color/white"
-            android:itemIconTint="white"
             />
 
         <item

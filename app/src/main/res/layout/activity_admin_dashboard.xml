@@ -62,8 +62,7 @@
             android:backgroundTint="@color/black"
             android:text="REQUEST"
             android:textAlignment="center"
-            android:textColor="@color/black"
-
+            android:textColor="@color/white"
             android:textSize="20dp" />
 
         <!--  <TextView

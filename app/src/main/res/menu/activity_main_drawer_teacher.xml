@@ -6,8 +6,8 @@
     <group>
         <item
             android:id="@+id/nav_teacherhome"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="TEACHER HOME" />
+            android:icon="@drawable/home_white"
+            android:title="@string/menu_home_t" />
 
         <item
             android:id="@+id/nav_inst"

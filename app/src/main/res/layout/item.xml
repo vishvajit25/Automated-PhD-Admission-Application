@@ -4,15 +4,15 @@
     android:layout_height="150dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
-    android:background="@drawable/light"
+    android:background="@drawable/card_bg"
     app:cardCornerRadius="8dp"
     android:layout_margin="16dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:background="@drawable/light"
+        android:paddingLeft="16dp"
+        android:background="@drawable/card_bg"
         android:orientation="vertical">
 
         <LinearLayout

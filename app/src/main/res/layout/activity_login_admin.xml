@@ -42,6 +42,7 @@
         android:gravity="center_vertical|start"
         android:textColor="@color/black"
         android:hint="EMAIL"
+        android:textColorHint="@color/black"
         android:inputType="textPersonName" />
 
 
@@ -56,6 +57,7 @@
         android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="PASSWORD"
+        android:textColorHint="@color/black"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,9 +70,9 @@
         android:layout_height="36dp"
         android:layout_gravity="center"
         android:text="LOGIN"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         tools:ignore="MissingConstraints"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="#000000"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />
     <Button

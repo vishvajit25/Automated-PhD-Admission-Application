@@ -8,7 +8,7 @@
     android:background="@drawable/background_light"
     tools:context=".Register"
     android:id="@+id/ll"
-    android:paddingTop="10sp"
+    android:paddingTop="170sp"
     android:orientation="vertical"
     android:gravity="center_vertical|start"
     android:paddingBottom="10dp"
@@ -21,7 +21,7 @@
         android:fontFamily="@font/title"
         android:gravity="center_horizontal"
         android:text="LOGIN"
-
+        android:elevation="4dp"
         android:layout_gravity="center"
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:textColor="@color/black"
@@ -111,6 +111,19 @@
         android:text="CREATE ACCOUNT"
         android:textColor="@color/white"
         tools:ignore="MissingConstraints" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/prevbutton"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="left|bottom"
+            android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+    </RelativeLayout>
 
     <!-- <Button
          android:id="@+id/teacher"

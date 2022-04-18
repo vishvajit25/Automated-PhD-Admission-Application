@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class Login extends AppCompatActivity {
     TextView mcreatebutton;
     TextView forgetpass;
     FirebaseAuth mAuth;
+    ImageView prev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showRecoverPasswordDialog();
+            }
+        });
+        prev = findViewById(R.id.prevbutton);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (Login.this,options.class);
+                startActivity(intent);
             }
         });
 
