@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.College_PhD"
         android:usesCleartextTraffic="true">
-
         <activity
             android:name=".recycler_open"
             android:exported="false" />

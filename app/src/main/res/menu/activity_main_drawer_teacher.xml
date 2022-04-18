@@ -7,15 +7,18 @@
         <item
             android:id="@+id/nav_teacherhome"
             android:icon="@drawable/home_white"
-            android:title="@string/menu_home_t" />
+            android:title="@string/menu_home_t"
+            android:iconTint="@color/white"/>
 
         <item
             android:id="@+id/nav_inst"
             android:icon="@drawable/ic_baseline_speaker_notes_24"
-            android:title="@string/menu_gallery" />
+            android:title="@string/menu_gallery"
+            android:iconTint="@color/white"/>
         <item
             android:id="@+id/nav_faq"
             android:icon="@drawable/ic_baseline_question_answer_24"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/menu_slideshow"
+            android:iconTint="@color/white" />
     </group>
 </menu>

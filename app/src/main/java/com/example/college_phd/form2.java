@@ -92,6 +92,7 @@ public class form2 extends AppCompatActivity {
             public void onClick(View v) {
                 submit.setClickable(true);
                 submit.setAlpha(1);
+                submit.setEnabled(true);
             }
         });
         submit.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +118,7 @@ public class form2 extends AppCompatActivity {
                 ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("ugpercentage").setValue(ugperc);
                 ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("courseopted").setValue(courseopted);
                 ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("authorid").setValue(author);
-
+                finish();
                 //Map<String,Object> user = new HashMap<>();
                 //final Object Tenth_Board = user.put("Tenth Board", tenthboard);
                 //final Object Tenth_percentage = user.put("Tenth %", tenth);

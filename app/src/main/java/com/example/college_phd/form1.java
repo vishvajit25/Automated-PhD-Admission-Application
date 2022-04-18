@@ -72,6 +72,7 @@ public class form1 extends AppCompatActivity {
                 Toast.makeText(form1.this, "Saved Data", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(form1.this, MainActivity.class);
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
             }
         });
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),

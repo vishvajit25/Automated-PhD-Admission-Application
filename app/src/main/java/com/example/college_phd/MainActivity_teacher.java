@@ -42,12 +42,11 @@ public class MainActivity_teacher extends AppCompatActivity {
         binding = ActivityNavigationDrawerTBinding.inflate(getLayoutInflater());
 //                ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setSupportActionBar(binding.appBarMain.toolbar2);
-        binding.appBarMain.toolbar2.setOnClickListener(new View.OnClickListener() {
+        setSupportActionBar(binding.appBarMain.toolbarT);
+        binding.appBarMain.toolbarT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+
             }
         });
         DrawerLayout drawer = binding.drawerLayoutT;
@@ -55,12 +54,6 @@ public class MainActivity_teacher extends AppCompatActivity {
         hview = navigationView.getHeaderView(0);
         user = hview.findViewById(R.id.user_t);
         logout = hview.findViewById(R.id.logoutt);
-//        logout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(), login_teacher.class));
-//            }
-//        });
         //==================================================================
 //        ref.addValueEventListener(new ValueEventListener() {
 //            @Override
@@ -117,7 +110,6 @@ public class MainActivity_teacher extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity_teacher.this, login_teacher.class);
                 startActivity(intent);
                 FirebaseAuth.getInstance().signOut();
-                finish();
         }
 
         return true;

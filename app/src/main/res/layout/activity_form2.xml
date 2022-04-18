@@ -203,6 +203,7 @@
         android:backgroundTint="#000000"
         android:layout_gravity="center"
         android:text="PAY"
+        android:textColor="@color/white"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />
@@ -212,8 +213,10 @@
         android:layout_height="36dp"
         android:layout_gravity="center"
         android:text="SUBMIT"
+        android:textColor="@color/white"
         android:alpha="0.5"
         android:clickable="false"
+        android:enabled="false"
         android:backgroundTint="#000000"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
