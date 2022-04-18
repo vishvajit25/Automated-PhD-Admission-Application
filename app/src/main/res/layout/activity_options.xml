@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_dark"
+    android:background="@drawable/background_light"
     tools:context=".options">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginTop="260dp"
         android:fontFamily="@font/front1"
         android:text="LOGIN AS "
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30dp"
         tools:ignore="MissingConstraints" />
 
@@ -58,7 +58,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/font3"
         android:text="Applicant"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/font3"
         android:text="Faculty"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp" />
 
     <TextView
@@ -81,7 +81,7 @@
         android:layout_marginTop="35dp"
         android:fontFamily="@font/font3"
         android:text="Admin"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp" />
 
     <ImageView

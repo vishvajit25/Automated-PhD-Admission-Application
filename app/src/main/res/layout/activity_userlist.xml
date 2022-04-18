@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_dark"
+    android:background="@drawable/background_light"
     tools:context=".userlist">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -23,6 +23,7 @@
             android:id="@+id/prevbutton"
             android:layout_width="50dp"
             android:layout_height="100dp"
+            android:alpha="0"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="20dp"
             android:gravity="left|bottom"

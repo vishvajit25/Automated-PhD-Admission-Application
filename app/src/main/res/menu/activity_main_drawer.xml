@@ -6,12 +6,15 @@
     <group >
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_baseline_home_24"
-            android:title="@string/menu_home" />
+            android:icon="@drawable/home_white"
+            android:title="@string/menu_home"
+            android:iconTint="@color/white"
+            android:itemIconTint="white"
+            />
 
         <item
             android:id="@+id/nav_inst"
-            android:icon="@drawable/ic_baseline_speaker_notes_24"
+            android:icon="@drawable/speaker_white"
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_faq"

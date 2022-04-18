@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_dark"
+    android:background="@drawable/background_light"
     tools:context=".splash">
 
     <ImageView
@@ -40,7 +40,7 @@
         android:fontFamily="@font/front3"
         android:text="WELCOME TO \n PHD ADMISSION PORTAL"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="normal" />
 

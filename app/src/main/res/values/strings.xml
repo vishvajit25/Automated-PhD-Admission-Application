@@ -8,9 +8,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">HOME</string>
-    <string name="menu_gallery">INSTRUCTIONS</string>
-    <string name="menu_slideshow">FAQ</string>
+    <string name="menu_home"><font fgcolor='#FFFFFF'>HOME</font></string>
+    <string name="menu_gallery"><font fgcolor='#FFFFFF'>INSTRUCTIONS</font></string>
+    <string name="menu_slideshow"><font fgcolor='#FFFFFF'>FAQ</font></string>
     <string name="fill"><u>FILL APPLICATION</u></string>
     <string name="view"><u>VIEW APPLICATION</u></string>
     <string name="download"><u>DOWNLOAD APPLICATION</u></string>

@@ -109,6 +109,7 @@ public class Navigation_drawer extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.navigation_drawer, menu);
         return true;
     }
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (id){
@@ -116,7 +117,6 @@ public class Navigation_drawer extends AppCompatActivity {
                 Intent intent = new Intent(Navigation_drawer.this, Login.class);
                 startActivity(intent);
                 FirebaseAuth.getInstance().signOut();
-                finish();
         }
 
         return true;

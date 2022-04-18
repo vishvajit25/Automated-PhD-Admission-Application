@@ -1,8 +1,10 @@
 package com.example.college_phd;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -107,18 +109,19 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.navigation_drawer, menu);
         return true;
     }
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//        switch (id){
-//            case R.id.logout:
-//                Intent intent = new Intent(MainActivity.this, Login.class);
-//                FirebaseAuth.getInstance().signOut();
-//                finish();
-//                startActivity(intent);
-//        }
-//
-//        return true;
-//    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.logout:
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(intent);
+        }
+
+        return true;
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
