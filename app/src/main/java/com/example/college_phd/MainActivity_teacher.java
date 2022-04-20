@@ -5,12 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuView;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,104 +18,83 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.college_phd.databinding.ActivityNavigationDrawerTBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class MainActivity_teacher extends AppCompatActivity {
 
+    private @NonNull
+    ActivityNavigationDrawerTBinding binding;
     private AppBarConfiguration mAppBarConfiguration;
-    private @NonNull ActivityNavigationDrawerTBinding binding;
-    private View hview;
-    private TextView user;
-    private DatabaseReference ref;
-    private FirebaseAuth fAuth;
-    MenuView.ItemView logout;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        fAuth=FirebaseAuth.getInstance();
-        ref= FirebaseDatabase.getInstance().getReference();
+        super.onCreate(savedInstanceState);
         binding = ActivityNavigationDrawerTBinding.inflate(getLayoutInflater());
-//                ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         setSupportActionBar(binding.appBarMain.toolbarT);
-        binding.appBarMain.toolbarT.setOnClickListener(new View.OnClickListener() {
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
+        getSupportActionBar().setTitle("Dashboard");
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_t);
+        NavigationView navView = (NavigationView) findViewById(R.id.nav_view_t);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                if(menuItem.getItemId() == R.id.nav_teacherhome){
+                    //TODO: Start new activity
+                }
+
+                return true;
 
             }
         });
-        DrawerLayout drawer = binding.drawerLayoutT;
-        NavigationView navigationView =  binding.navViewT;
-        hview = navigationView.getHeaderView(0);
-        user = hview.findViewById(R.id.user_t);
-        logout = hview.findViewById(R.id.logoutt);
-        //==================================================================
-//        ref.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-////              String facultyname = snapshot.child("name").getValue().toString();
-//                String userstring = snapshot.child("Faculty").child(fAuth.getUid()).child("name").getValue().toString();
-//                user.setText(userstring);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-        //=======================================================================
 
-
-
-        //SharedPreferences sp = getApplicationContext().getSharedPreferences("newsp", Context.MODE_PRIVATE);
-        //String username = sp.getString("Username", "");
-        //sharedPreference = getSharedPreferences("mypref",MODE_PRIVATE);
-        //String s1 = sharedPreference.getString("name", null);
-        //String name = sharedPreference.getString("name",null);
-        /*Intent intent = getIntent();
-        String name = intent.getStringExtra("NAME");*/
-        //user = findViewById(R.id.user);
-        //user.setText(""+username);
-
-        FirebaseAuth.getInstance().getUid();
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_teacher, R.id.nav_faq_teacher, R.id.nav_inst)
-                .setOpenableLayout(drawer)
-                .build();
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_teacher);
-        NavigationUI.setupActionBarWithNavController(MainActivity_teacher.this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        getWindow().getDecorView().setSystemUiVisibility(
+//                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
+//                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        switch (id){
-            case R.id.logoutt:
-                Intent intent = new Intent(MainActivity_teacher.this, login_teacher.class);
-                startActivity(intent);
-                FirebaseAuth.getInstance().signOut();
+        if(item.getItemId() == R.id.logoutt){
+            //TODO: Logout
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(), login_teacher.class));
+            finish();
+            }
+        else if(item.getItemId() == android.R.id.home){
+            drawerLayout.openDrawer(GravityCompat.START);
         }
-
         return true;
     }
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_teacher);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FirebaseAuth.getInstance().signOut();
     }
 }

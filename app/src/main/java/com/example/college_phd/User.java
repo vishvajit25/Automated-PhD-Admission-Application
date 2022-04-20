@@ -1,7 +1,7 @@
 package com.example.college_phd;
 
 public class User {
-    String Name, ApplicantID, tenthpercentage, twelfthpercentage, ugpercentage;
+    String Name, ApplicantID, tenthpercentage, twelfthpercentage, ugpercentage ,course;
 
 
     public String getName() {
@@ -23,4 +23,5 @@ public class User {
     public String getugpercentage() {
         return ugpercentage;
     }
+    public String getCourse(){ return course ;}
 }

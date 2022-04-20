@@ -11,6 +11,9 @@
         android:theme="@style/Theme.College_PhD"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".timetable_register"
+            android:exported="false" />
+        <activity
             android:name=".recycler_open"
             android:exported="false" />
         <activity
@@ -30,9 +33,10 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity_teacher"
-            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.College_PhD.NoActionBar" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".subject"
             android:exported="false" />
@@ -44,6 +48,7 @@
             android:exported="false" />
         <activity
             android:name=".splash"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,11 +65,14 @@
         <activity
             android:name=".Navigation_drawer"
             android:exported="false"
-            android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/Theme.College_PhD.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:label="@string/title_activity_navigation_drawer" />
         <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Register"
             android:exported="true" />

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.college_phd.R;
 import com.example.college_phd.info;
+import com.example.college_phd.timetable_register;
 import com.example.college_phd.userlist;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class teacher_dashboard_frag extends Fragment  {
 
-    Button viewbutton, req;
+    Button viewbutton, req,status;
     DatabaseReference ref;
     FirebaseAuth fAuth;
 
@@ -38,6 +39,7 @@ public class teacher_dashboard_frag extends Fragment  {
         ref = FirebaseDatabase.getInstance().getReference();
         fAuth = FirebaseAuth.getInstance();
         viewbutton = (Button) view.findViewById(R.id.view);
+        status = (Button) view.findViewById(R.id.status);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -68,6 +70,16 @@ public class teacher_dashboard_frag extends Fragment  {
             public void onClick(View v) {
 
                 Intent i = new Intent(getActivity(), userlist.class);
+                startActivity(i);
+
+
+            }
+        });
+        status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getActivity(), timetable_register.class);
                 startActivity(i);
 
 

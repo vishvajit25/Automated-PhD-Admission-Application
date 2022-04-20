@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_light"
+    tools:context=".timetable_register"
+    android:id="@+id/ll"
+    android:paddingTop="10sp"
+    android:orientation="vertical"
+    android:gravity="center_vertical|start"
+    android:paddingBottom="10dp"
+    android:layout_centerHorizontal="true">
+
+    <TextView
+        android:id="@+id/registertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/title"
+        android:gravity="center_horizontal"
+        android:text="SET RESULTS"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:gravity="center_vertical|start"
+        android:hint="NAME"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/appid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColorHint="@color/black"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+
+        android:ems="10"
+        android:hint="APPLICANT ID"
+        android:textColor="@color/black"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/phno"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+    <AutoCompleteTextView
+        android:id="@+id/statusstudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColorHint="@color/black"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:ems="10"
+        android:hint="STATUS"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:alpha="0.25"
+        android:focusableInTouchMode="false"
+        android:hint="DATE"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:textColor="@color/black"
+        android:alpha="0.25"
+        android:textColorHint="@color/black"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="TIME"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <Button
+        android:id="@+id/set"
+        android:layout_width="205dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:text="SET"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:backgroundTint="#000000"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="488dp" />
+
+
+</LinearLayout>

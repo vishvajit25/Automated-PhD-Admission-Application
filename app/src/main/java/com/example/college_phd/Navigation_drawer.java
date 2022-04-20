@@ -3,25 +3,30 @@ package com.example.college_phd;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuView;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.example.college_phd.databinding.ActivityNavigationDrawerBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class Navigation_drawer extends AppCompatActivity {
 
@@ -32,6 +37,7 @@ public class Navigation_drawer extends AppCompatActivity {
     private DatabaseReference ref;
     private FirebaseAuth fAuth;
     MenuView.ItemView logout;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,20 +46,32 @@ public class Navigation_drawer extends AppCompatActivity {
         fAuth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference();
         binding = ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
-//                ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarNavigationDrawer.toolbar);
-        binding.appBarNavigationDrawer.toolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-            }
-        });
-        DrawerLayout drawer = binding.drawerLayout;
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+//        binding.appBarNavigationDrawer.toolbar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+////                        .setAction("Action", null).show();
+//            }
+//        });
         NavigationView navigationView =  binding.navView;
         hview = navigationView.getHeaderView(0);
-        user = hview.findViewById(R.id.user_t);
+        user = hview.findViewById(R.id.user);
+        ref.child("Applicant").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d("TAG", "onDataChange: " + snapshot);
+                user.setText(snapshot.child("Name").getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         logout = hview.findViewById(R.id.logout);
 //        logout.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -93,14 +111,23 @@ public class Navigation_drawer extends AppCompatActivity {
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_inst, R.id.nav_faq)
-                .setOpenableLayout(drawer)
-                .build();
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
+        getSupportActionBar().setTitle("Dashboard");
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation_drawer);
-        NavigationUI.setupActionBarWithNavController(Navigation_drawer.this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                Toast.makeText(Navigation_drawer.this, menuItem.getItemId() + "", Toast.LENGTH_SHORT).show();
+
+
+
+                return true;
+
+            }
+        });
     }
 
     @Override
@@ -115,17 +142,17 @@ public class Navigation_drawer extends AppCompatActivity {
         switch (id){
             case R.id.logout:
                 Intent intent = new Intent(Navigation_drawer.this, Login.class);
-                startActivity(intent);
                 FirebaseAuth.getInstance().signOut();
+                startActivity(intent);
+                finish();
+                break;
+
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+
         }
 
         return true;
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation_drawer);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
 }

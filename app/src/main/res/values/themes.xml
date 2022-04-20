@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.College_PhD" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.College_PhD" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -12,16 +12,16 @@
         <item name="android:textColorHint">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Customize your theme her   e. -->
         <item name="android:actionOverflowButtonStyle">@color/black</item>
     </style>
 
-    <style name="Theme.College_PhD.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+<!--    <style name="Theme.College_PhD.NoActionBar">-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--    </style>-->
 
     <style name="Theme.College_PhD.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.College_PhD.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.College_PhD.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>
