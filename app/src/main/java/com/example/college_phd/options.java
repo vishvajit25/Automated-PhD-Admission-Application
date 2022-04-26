@@ -28,7 +28,7 @@ public class options extends AppCompatActivity {
         prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (options.this,splash.class);
+                Intent intent = new Intent (options.this,intro.class);
                 startActivity(intent);
             }
         });

@@ -10,9 +10,10 @@
     <TextView
         android:id="@+id/youare"
         android:layout_width="150dp"
-        android:layout_height="75dp"
+        android:layout_height="45dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="260dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/title"
         android:text="LOGIN AS "
         android:textColor="@color/black"
@@ -35,14 +36,14 @@
 
         <RadioButton
             android:id="@+id/rb2"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
              />
 
         <RadioButton
             android:id="@+id/rb3"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -55,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/youare"
         android:layout_marginLeft="180dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/normal"
         android:text="Applicant"
         android:textColor="@color/black"
@@ -90,7 +91,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/youare"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="0dp"
         android:layout_toRightOf="@id/rg"
         android:src="@drawable/ic_baseline_person_24" />
 
