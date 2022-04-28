@@ -11,9 +11,16 @@
         android:theme="@style/Theme.College_PhD"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".instruction"
+            android:exported="false" />
+        <activity
+            android:name=".payment"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".result"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".intro"
             android:exported="true"
@@ -72,7 +79,7 @@
         <activity
             android:name=".splash"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".options"
             android:exported="false"

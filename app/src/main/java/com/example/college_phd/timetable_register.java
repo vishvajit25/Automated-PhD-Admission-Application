@@ -5,7 +5,9 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -59,26 +61,48 @@ public class timetable_register extends AppCompatActivity {
         status.setAdapter(adapter);
         status.setThreshold(1);
         status.setTextColor(Color.BLACK);
-        String Statustext;
 
         status.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 status.showDropDown();
+                status.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        String Statustext = s.toString();
+                        if (Statustext.equals("Waiting List")) {
+                            date2.setVisibility(View.GONE);
+                            time2.setVisibility(View.GONE);
+                        }
+                        if (Statustext.equals("Rejected")) {
+                            date2.setVisibility(View.GONE);
+                            time2.setVisibility(View.GONE);
+                        }
+                        if(Statustext.equals("Waiting List")){
+                            date2.setVisibility(View.GONE);
+                            time2.setVisibility(View.GONE);
+                        }
+                        if(Statustext.equals("Selected")){
+                            date2.setVisibility(View.VISIBLE);
+                            time2.setVisibility(View.VISIBLE);
+                        }
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                    }
+                });
 
 
                 return false;
             }
         });
-        Statustext = status.getText().toString();
-        if(Statustext.equals("Waiting List")){
-            date2.setVisibility(View.GONE);
-            time2.setVisibility(View.GONE);
-        }
-        if(Statustext.equals("Rejected")){
-            date2.setVisibility(View.GONE);
-            time2.setVisibility(View.GONE);
-        }
 
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {

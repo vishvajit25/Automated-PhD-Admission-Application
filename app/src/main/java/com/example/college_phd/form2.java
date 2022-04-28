@@ -10,9 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,8 @@ public class form2 extends AppCompatActivity {
     String[] board = {"CBSE", "ISCE", "SB","NIOS","CISCE"};
     String[] courseopted = {"IoT","Deep Learning", "Machine Learning","Cloud Computing"};
     EditText tenth1, tenth2,twelfth1,twelfth2,authorid,ug;
+    CardView ten,ten1,twelve, twelve1,ugcard,ug1;
+    ImageView t1,t2,tw1,tw2,u1,u2,prev;
     AutoCompleteTextView tenth3,twelfth3,course;
     Button pay, submit;
     String userID;
@@ -38,12 +42,85 @@ public class form2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form2);
         ref=FirebaseDatabase.getInstance().getReference();
+        t1=findViewById(R.id.tenthrightarrow);
+        t2=findViewById(R.id.tenthdownarrow);
+        tw1=findViewById(R.id.twelfthrightarrow);
+        tw2=findViewById(R.id.twelfthdownarrow);
+        u1=findViewById(R.id.ugrightarrow);
+        u2=findViewById(R.id.ugdownarrow);
+        ten = findViewById(R.id.tenthcard);
+        ten1 = findViewById(R.id.tenthdetails);
+        twelve = findViewById(R.id.twelfthcard);
+        twelve1 = findViewById(R.id.twelfthdetails);
+        ugcard = findViewById(R.id.ugcard);
+        ug1 = findViewById(R.id.ugdetails);
+        prev = findViewById(R.id.prevbutton);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        t1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ten1.setVisibility(View.VISIBLE);
+                t1.setVisibility(View.GONE);
+                t2.setVisibility(View.VISIBLE);
+
+            }
+        });
+        tw1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                twelve1.setVisibility(View.VISIBLE);
+                tw1.setVisibility(View.GONE);
+                tw2.setVisibility(View.VISIBLE);
+
+            }
+        });
+        u1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ug1.setVisibility(View.VISIBLE);
+                u1.setVisibility(View.GONE);
+                u2.setVisibility(View.VISIBLE);
+
+            }
+        });
+        t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ten1.setVisibility(View.GONE);
+                t1.setVisibility(View.VISIBLE);
+                t2.setVisibility(View.GONE);
+
+            }
+        });
+        tw2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                twelve1.setVisibility(View.GONE);
+                tw1.setVisibility(View.VISIBLE);
+                tw2.setVisibility(View.GONE);
+
+            }
+        });
+        u2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ug1.setVisibility(View.GONE);
+                u1.setVisibility(View.VISIBLE);
+                u2.setVisibility(View.GONE);
+
+            }
+        });
         tenth1 = findViewById(R.id.tenth);
         tenth2 = findViewById(R.id.tenthlink);
         ug = findViewById(R.id.clg);
         twelfth1 = findViewById(R.id.twelfth);
         twelfth2 = findViewById(R.id.tenthlink);
-        authorid = findViewById(R.id.author);
+        authorid = findViewById(R.id.paperlink);
         tenth3 = findViewById(R.id.TextView_tenth);
         course = findViewById(R.id.TextView_Course);
         twelfth3 = findViewById(R.id.TextView_twelfth);
@@ -90,6 +167,8 @@ public class form2 extends AppCompatActivity {
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(form2.this, payment.class);
+                startActivity(new Intent(getApplicationContext(),payment.class));
                 submit.setClickable(true);
                 submit.setAlpha(1);
                 submit.setEnabled(true);

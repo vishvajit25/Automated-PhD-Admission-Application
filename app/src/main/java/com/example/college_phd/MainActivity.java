@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.college_phd.databinding.ActivityNavigationDrawerBinding;
+import com.example.college_phd.ui.gallery.GalleryFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -118,8 +118,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-                Toast.makeText(MainActivity.this, menuItem.getItemId() + "", Toast.LENGTH_SHORT).show();
-
+//                Toast.makeText(MainActivity.this, menuItem.getItemId() + "", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, GalleryFragment.class);
+//                    startActivity(new Intent(getApplicationContext(), com.ui.gallery.GalleryFragment.class));
+                startActivity(intent);
 
 
                 return true;

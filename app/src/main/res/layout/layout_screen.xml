@@ -7,22 +7,21 @@
 
     <ImageView
         android:id="@+id/img_intro"
-        android:src="@drawable/bg_grey"
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="35dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="35dp"/>
+        android:src="@drawable/bg_grey" />
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/ibm_bold"
-        android:text="ANONYMITY COLLEGE"
+        android:text="WE PROVIDE LOTS OF SUBJECT"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"/>
 
     <TextView

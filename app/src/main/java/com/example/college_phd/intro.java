@@ -48,7 +48,7 @@ public class intro extends AppCompatActivity {
         //Data
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("ANONYMITY COLLEGE", "WELCOMES YOU !", R.drawable.i1));
-        mList.add(new ScreenItem("WE PROVIDE LOTS OF SUBJECTS ", "TO PURSUE YOUR PhD !", R.drawable.i2));
+        mList.add(new ScreenItem("10+ SUBJECTS", "TO PURSUE YOUR PhD !", R.drawable.i2));
         mList.add(new ScreenItem("WE ARE HAPPY", "TO CALL YOU AN ANONYMITIAN !", R.drawable.i3));
 
         //Setup viewPager

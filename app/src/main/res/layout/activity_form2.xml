@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +10,10 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_light"
+    android:background="@drawable/background_light_scroll"
     android:id="@+id/form2"
     android:orientation="vertical"
-    android:paddingBottom="10dp"
-    android:layout_centerHorizontal="true">
+    android:paddingBottom="10dp">
 
 
     <TextView
@@ -27,26 +27,57 @@
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:textSize="30sp" />
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tenthcard"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        card_view:cardCornerRadius="4dp">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/tenthrightarrow"
+        android:src="@drawable/ic_baseline_arrow_right_24" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/tenthdownarrow"
+            android:visibility="invisible"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24" />
 
     <TextView
         android:id="@+id/tenthtitle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/title"
-        android:gravity="center_horizontal"
         android:text="10th STD DETAILS : "
-        android:layout_marginTop="60dp"
-        android:layout_gravity="center"
+
         android:textColor="@color/black"
         android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tenthdetails"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        card_view:cardCornerRadius="4dp">
     <AutoCompleteTextView
         android:id="@+id/TextView_tenth"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="1dp"
+        android:layout_marginLeft="10dp"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:textColorHighlight="@color/black"
@@ -56,10 +87,10 @@
         android:inputType="text"/>
     <EditText
         android:id="@+id/tenth"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:ems="10"
+        android:layout_marginTop="50dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:gravity="center_vertical|start"
@@ -67,37 +98,68 @@
         android:inputType="numberDecimal" />
     <EditText
         android:id="@+id/tenthlink"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:textSize="16dp"
+        android:layout_marginTop="90dp"
         android:textColorHint="@color/black"
         android:width="211dp"
         android:textColor="@color/black"
         android:layout_marginLeft="1dp"
-        android:layout_marginBottom="16dp"
+
         android:ems="10"
         android:hint="10th Certificate GDrive Link"
         android:inputType="text"
          />
-
-    <TextView
-        android:id="@+id/twelfthtitle"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/title"
-        android:gravity="center_horizontal"
-        android:text="12th STD DETAILS : "
-        android:layout_marginTop="60dp"
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/twelfthcard"
         android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:layout_width="350dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        card_view:cardCornerRadius="4dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/twelfthrightarrow"
+            android:src="@drawable/ic_baseline_arrow_right_24" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:id="@+id/twelfthdownarrow"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+
+        <TextView
+            android:id="@+id/twelfthtitle"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/title"
+            android:text="12th STD DETAILS : "
+
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/twelfthdetails"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="140dp"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        card_view:cardCornerRadius="4dp">
     <AutoCompleteTextView
         android:id="@+id/TextView_twelfth"
-        android:layout_width="211dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:textColor="@color/black"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
@@ -109,10 +171,9 @@
 
     <EditText
         android:id="@+id/twelfth"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
@@ -120,75 +181,101 @@
         android:hint="12th STD %"
         android:inputType="numberDecimal" />
 
-
     <EditText
-        android:id="@+id/author"
-        android:layout_width="wrap_content"
+        android:id="@+id/twelfthlink"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginStart="1dp"
         android:textColor="@color/black"
         android:textSize="16dp"
         android:textColorHint="@color/black"
         android:width="211dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="90dp"
         android:ems="10"
         android:hint="12th Certificate GDrive Link"
         android:inputType="text"
         />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ugcard"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="4dp">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/ugrightarrow"
+        android:src="@drawable/ic_baseline_arrow_right_24" />
+
+        <ImageView
+            android:id="@+id/ugdownarrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            android:visibility="invisible" />
+
     <TextView
         android:id="@+id/ugtitle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/title"
-        android:gravity="center_horizontal"
         android:text="UG DETAILS : "
-        android:layout_marginTop="60dp"
-        android:layout_gravity="center"
         android:textColor="@color/black"
         android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ugdetails"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        card_view:cardCornerRadius="4dp">
     <EditText
         android:id="@+id/clg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:layout_marginStart="1dp"
-        android:textSize="16dp"
-        android:width="211dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:textColorHint="@color/black"
-        android:hint="UG Percentage"
-        android:inputType="numberDecimal"
-        />
-    <EditText
-        android:id="@+id/twelfthlink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="1dp"
-        android:textSize="13.5dp"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:width="211dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="Paper Published link or Author ID"
-        android:inputType="text"
-        />
-    <AutoCompleteTextView
-        android:id="@+id/TextView_Course"
-        android:layout_width="211dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:textColor="@color/black"
         android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="1dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:textColorHint="@color/black"
+        android:hint="UG Percentage "
+        android:inputType="numberDecimal"
+        />
+    <EditText
+        android:id="@+id/paperlink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="50dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:layout_marginLeft="1dp"
+        android:ems="10"
+        android:hint="Paper Published link or Author ID"
+        android:inputType="text"
+        />
+    </androidx.cardview.widget.CardView>
+    <AutoCompleteTextView
+        android:id="@+id/TextView_Course"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
         android:textColorHint="@color/black"
         android:layout_marginBottom="12dp"
         android:dropDownWidth="211dp"
@@ -200,7 +287,7 @@
     <Button
         android:id="@+id/pay"
         android:layout_width="205dp"
-        android:layout_height="36dp"
+        android:layout_height="45dp"
         android:backgroundTint="#000000"
         android:layout_gravity="center"
         android:text="PAY"
@@ -211,7 +298,7 @@
     <Button
         android:id="@+id/submitbutton"
         android:layout_width="205dp"
-        android:layout_height="36dp"
+        android:layout_height="45dp"
         android:layout_gravity="center"
         android:text="SUBMIT"
         android:textColor="@color/white"
@@ -222,6 +309,20 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+
+        <ImageView
+            android:id="@+id/prevbutton"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+    </RelativeLayout>
 
 </LinearLayout>
+
 </ScrollView>

@@ -121,7 +121,9 @@ public class Navigation_drawer extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
                 Toast.makeText(Navigation_drawer.this, menuItem.getItemId() + "", Toast.LENGTH_SHORT).show();
-
+//                Intent intent = new Intent(Navigation_drawer.this, GalleryFragment.class);
+////                    startActivity(new Intent(getApplicationContext(), com.ui.gallery.GalleryFragment.class));
+//                startActivity(intent);
 
 
                 return true;

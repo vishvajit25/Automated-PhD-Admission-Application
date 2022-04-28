@@ -18,6 +18,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.college_phd.databinding.ActivityNavigationDrawerTBinding;
+import com.example.college_phd.ui.gallery.GalleryFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -70,6 +71,12 @@ public class MainActivity_teacher extends AppCompatActivity {
 
                 if(menuItem.getItemId() == R.id.nav_teacherhome){
                     //TODO: Start new activity
+                }
+                if(menuItem.getItemId() == R.id.nav_inst){
+                    //TODO: Start new activity
+                    Intent intent = new Intent(MainActivity_teacher.this, instruction.class);
+//                    startActivity(new Intent(getApplicationContext(), com.ui.gallery.GalleryFragment.class));
+                    startActivity(intent);
                 }
 
                 return true;

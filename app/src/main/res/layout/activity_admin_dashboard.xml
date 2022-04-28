@@ -23,7 +23,60 @@
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:textColor="#000000"
         android:textSize="30sp" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/creds"
+            android:layout_gravity="center"
+            android:layout_width="350dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_height="140dp"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="4dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="FIREBASE CREDENTIALS :"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:fontFamily="@font/ibm_semibold"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="30dp"
+                android:text="EMAIL : vishvajitgaming@gmail.com"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:fontFamily="@font/ibm_semibold"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="60dp"
+                android:text="PASSWORD : firebase123"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:fontFamily="@font/ibm_semibold"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="90dp"
+                android:text="DATABASE : PhD-App"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:fontFamily="@font/ibm_semibold"
+                />
+
+        </androidx.cardview.widget.CardView>
 
 
 
@@ -45,13 +98,14 @@
             android:id="@+id/personal_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ASK FOR PERMISSIONS TO ACCESS APPLICATIONS"
+            android:text="CHECK FOR REQUEST OF ACCESS"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
             android:layout_marginTop="20dp"
             android:textSize="20dp"
+            android:fontFamily="@font/ibm_semibold"
             android:textColor="@color/black"
-            android:fontFamily="@font/sub"/>
+            />
         <Button
             android:id="@+id/req"
             android:layout_width="wrap_content"
@@ -60,10 +114,11 @@
             android:fontFamily="@font/sub"
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/black"
-            android:text="REQUEST"
+            android:text="CHECK"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp" />
+
 
         <!--  <TextView
               android:id="@+id/appli_link"
@@ -78,5 +133,18 @@
               android:fontFamily="@font/sub"/> -->
     </androidx.cardview.widget.CardView>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+
+        <ImageView
+            android:id="@+id/prevbutton"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_login_24" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
