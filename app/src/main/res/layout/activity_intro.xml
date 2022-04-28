@@ -7,13 +7,28 @@
     android:background="@drawable/background_light"
     tools:context=".intro">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
-        android:scaleY="1"
-        android:scaleX="1"
-        android:src="@drawable/loogo" />
+<!--    <ImageView-->
+<!--        android:id="@+id/logo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="90dp"-->
+<!--        android:scaleY="1"-->
+<!--        android:scaleX="1"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        -->
+<!--        android:src="@drawable/loogo" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/imgBusiness"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/loogo" />
+    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/screen_viewpager"
@@ -23,7 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_indicator"

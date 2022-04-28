@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="180dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     android:background="@drawable/card_bg"
@@ -11,9 +11,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
         android:background="@drawable/card_bg"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="16dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -27,10 +27,10 @@
                 android:text="NAME :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvfirstName"
+                android:id="@+id/name_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -52,14 +52,14 @@
                 android:text="UID : "
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvappli"
+                android:id="@+id/appid_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="Stark"
+                android:text="1234"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -74,35 +74,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TENTH % :"
+                android:text="STATUS :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvtenth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="18"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TWLFTH % :"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tvtwelfth"
+                android:id="@+id/status_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -120,21 +98,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="UG % :"
+                android:text="DATE :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvug"
+                android:id="@+id/date_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:text="18"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
-
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,17 +122,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="COURSE OPTED :"
+                android:text="TIME :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvourse"
+                android:id="@+id/time_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="IoT"
+                android:text="18"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 

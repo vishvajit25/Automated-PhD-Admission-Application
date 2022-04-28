@@ -2,6 +2,7 @@ package com.example.college_phd;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
@@ -16,6 +17,7 @@ import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.college_phd.ui.teacher_dashboard_frag.teacher_dashboard_frag;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -57,19 +59,27 @@ public class timetable_register extends AppCompatActivity {
         status.setAdapter(adapter);
         status.setThreshold(1);
         status.setTextColor(Color.BLACK);
+        String Statustext;
 
         status.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 status.showDropDown();
 
-                if (status.equals("Selected")) {
-                    date2.setAlpha(1);
-                    time2.setAlpha(1);
-                }
+
                 return false;
             }
         });
+        Statustext = status.getText().toString();
+        if(Statustext.equals("Waiting List")){
+            date2.setVisibility(View.GONE);
+            time2.setVisibility(View.GONE);
+        }
+        if(Statustext.equals("Rejected")){
+            date2.setVisibility(View.GONE);
+            time2.setVisibility(View.GONE);
+        }
+
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -112,13 +122,11 @@ public class timetable_register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 timetable timetable = new timetable(name.getText().toString(), appid.getText().toString(),status.getText().toString(), date2.getText().toString(), time2.getText().toString());
-//        reff.child("timetable").child(mAuth.getUid()).child("Name").setValue(name);
-//        reff.child("timetable").child(mAuth.getUid()).child("ApplicantID").setValue(applicationiddb);
-//        reff.child("timetable").child(mAuth.getUid()).child("Status").setValue(status);
-//        reff.child("timetable").child(mAuth.getUid()).child("Date").setValue(datedb);
-//        reff.child("timetable").child(mAuth.getUid()).child("Time").setValue(timedb);
-
                 reff.child("timetable").push().setValue(timetable);
+//                Toast.makeText(timetable_register.this, "Error", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(timetable_register.this, teacher_dashboard_frag.class);
+                startActivity(intent);
+
             }
         });
     }

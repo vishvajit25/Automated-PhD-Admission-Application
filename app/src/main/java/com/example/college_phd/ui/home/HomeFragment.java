@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.example.college_phd.R;
 import com.example.college_phd.form1;
 import com.example.college_phd.form2;
+import com.example.college_phd.result;
 
 public class HomeFragment extends Fragment  {
 
@@ -29,9 +30,8 @@ public class HomeFragment extends Fragment  {
 
         fa1 = (TextView) view.findViewById(R.id.fillapplication);
         fa2 = (TextView) view.findViewById(R.id.appli_link2);
-        va = (TextView) view.findViewById(R .id.appli_link3);
+//        va = (TextView) view.findViewById(R .id.appli_link3);
         da = (TextView) view.findViewById(R.id.appli_link4);
-
 
         fa1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +47,13 @@ public class HomeFragment extends Fragment  {
                 startActivity(intent);
             }
         });
-
+        da.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), result.class);
+                startActivity(intent);
+            }
+        });
 
 
         return view;

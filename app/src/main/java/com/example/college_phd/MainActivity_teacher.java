@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,11 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.college_phd.databinding.ActivityNavigationDrawerTBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -27,6 +34,9 @@ public class MainActivity_teacher extends AppCompatActivity {
     ActivityNavigationDrawerTBinding binding;
     private AppBarConfiguration mAppBarConfiguration;
     private DrawerLayout drawerLayout;
+    private DatabaseReference ref;
+    private TextView usert;
+    private View hview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +44,26 @@ public class MainActivity_teacher extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityNavigationDrawerTBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        ref= FirebaseDatabase.getInstance().getReference();
         setSupportActionBar(binding.appBarMain.toolbarT);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
         getSupportActionBar().setTitle("Dashboard");
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_t);
         NavigationView navView = (NavigationView) findViewById(R.id.nav_view_t);
+        hview = navView.getHeaderView(0);
+        usert = hview.findViewById(R.id.user_t);
+        ref.child("Faculty").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                usert.setText(snapshot.child("Name").getValue().toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {

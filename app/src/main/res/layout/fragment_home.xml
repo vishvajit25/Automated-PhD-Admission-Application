@@ -163,17 +163,17 @@
                 android:textSize="30dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/sub"/>
-            <TextView
-                android:id="@+id/appli_link3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:text="@string/view"
-                android:paddingTop="0dp"
-                android:textSize="20dp"
-                android:textColor="#FF0000ff"
-                android:fontFamily="@font/sub"/>
+<!--            <TextView-->
+<!--                android:id="@+id/appli_link3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textAlignment="center"-->
+<!--                android:text="@string/view"-->
+<!--                android:paddingTop="0dp"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textColor="#FF0000ff"-->
+<!--                android:fontFamily="@font/sub"/>-->
             <TextView
                 android:id="@+id/appli_link4"
                 android:layout_width="wrap_content"
@@ -181,7 +181,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textAlignment="center"
                 android:text="@string/status"
-                android:paddingTop="90dp"
+                android:layout_marginTop="60dp"
                 android:textSize="20dp"
                 android:textColor="#FF0000ff"
                 android:fontFamily="@font/sub"/>
