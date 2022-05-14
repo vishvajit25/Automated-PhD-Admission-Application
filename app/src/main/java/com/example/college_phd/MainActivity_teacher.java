@@ -7,11 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -19,6 +22,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.college_phd.databinding.ActivityNavigationDrawerTBinding;
 import com.example.college_phd.ui.gallery.GalleryFragment;
+import com.example.college_phd.ui.teacher_dashboard_frag.teacher_dashboard_frag;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -39,13 +43,16 @@ public class MainActivity_teacher extends AppCompatActivity {
     private TextView usert;
     private View hview;
 
+    FragmentManager fm = getSupportFragmentManager();
+    FragmentTransaction ft = fm.beginTransaction();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         binding = ActivityNavigationDrawerTBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        ref= FirebaseDatabase.getInstance().getReference();
+        ref = FirebaseDatabase.getInstance().getReference();
         setSupportActionBar(binding.appBarMain.toolbarT);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
@@ -53,6 +60,8 @@ public class MainActivity_teacher extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_t);
         NavigationView navView = (NavigationView) findViewById(R.id.nav_view_t);
         hview = navView.getHeaderView(0);
+        ft.replace(R.id.nav_host_teacher, new GalleryFragment());
+
         usert = hview.findViewById(R.id.user_t);
         ref.child("Faculty").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -69,14 +78,19 @@ public class MainActivity_teacher extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-                if(menuItem.getItemId() == R.id.nav_teacherhome){
+                Toast.makeText(MainActivity_teacher.this, "CLICK" + menuItem, Toast.LENGTH_SHORT).show();
+
+                ft.replace(R.id.nav_host_teacher, new GalleryFragment());
+                if (menuItem.getItemId() == R.id.nav_teacherhome) {
                     //TODO: Start new activity
+                    ft.replace(R.id.nav_host_teacher, new teacher_dashboard_frag());
                 }
-                if(menuItem.getItemId() == R.id.nav_inst){
-                    //TODO: Start new activity
-                    Intent intent = new Intent(MainActivity_teacher.this, instruction.class);
-//                    startActivity(new Intent(getApplicationContext(), com.ui.gallery.GalleryFragment.class));
-                    startActivity(intent);
+                if (menuItem.getItemId() == R.id.nav_inst) {
+                    ft.replace(R.id.nav_host_teacher, new GalleryFragment());
+//                    //TODO: Start new activity
+//                    Intent intent = new Intent(MainActivity_teacher.this, instruction.class);
+////                    startActivity(new Intent(getApplicationContext(), com.ui.gallery.GalleryFragment.class));
+//                    startActivity(intent);
                 }
 
                 return true;
@@ -102,13 +116,13 @@ public class MainActivity_teacher extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.logoutt){
+        if (item.getItemId() == R.id.logoutt) {
             //TODO: Logout
             FirebaseAuth.getInstance().signOut();
+            Toast.makeText(MainActivity_teacher.this, "Logged Out", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), login_teacher.class));
             finish();
-            }
-        else if(item.getItemId() == android.R.id.home){
+        } else if (item.getItemId() == android.R.id.home) {
             drawerLayout.openDrawer(GravityCompat.START);
         }
         return true;

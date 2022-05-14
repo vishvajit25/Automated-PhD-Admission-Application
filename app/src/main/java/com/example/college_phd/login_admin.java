@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ public class login_admin extends AppCompatActivity {
     FirebaseAuth mAuth;
     Button Login, register;
     EditText mEmail, mPassword;
+    ImageView prev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,14 @@ public class login_admin extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         Button Login = (Button) findViewById(R.id.loginbutton);
         register = findViewById(R.id.admin);
+        prev = findViewById(R.id.prevbutton);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (login_admin.this,options.class);
+                startActivity(intent);
+            }
+        });
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

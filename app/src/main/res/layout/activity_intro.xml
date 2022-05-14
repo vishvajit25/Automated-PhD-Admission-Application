@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_light"
+    android:background="@drawable/bgb"
     tools:context=".intro">
 
 <!--    <ImageView-->
@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
-        android:background="#fff"
+        android:background="#d1edfb"
         android:elevation="12dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -73,8 +73,8 @@
             android:layout_height="48dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/rounded"
-            android:fontFamily="@font/ibm_semibold"
+            android:background="@drawable/buttonstyle"
+            android:fontFamily="@font/segoeui"
             android:text="Next"
             android:textAllCaps="false"
             android:textColor="#fff"
@@ -87,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
-        android:background="#fff"
+        android:background="#d1edfb"
         android:elevation="12dp"
         android:gravity="center"
         android:visibility="invisible"
@@ -99,8 +99,8 @@
             android:layout_height="48dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/rounded"
-            android:fontFamily="@font/ibm_semibold"
+            android:background="@drawable/buttonstyle"
+            android:fontFamily="@font/segoeui"
             android:text="Get Started"
             android:textAllCaps="false"
             android:textColor="#fff"

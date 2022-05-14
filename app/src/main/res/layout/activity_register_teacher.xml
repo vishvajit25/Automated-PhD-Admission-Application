@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_light"
+    android:background="@drawable/bgb"
     tools:context=".Register"
     android:id="@+id/ll"
     android:paddingTop="10sp"
@@ -18,12 +18,12 @@
         android:id="@+id/registertext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/title"
+        android:fontFamily="@font/seguibl"
         android:gravity="center_horizontal"
         android:text="REGISTER"
         android:layout_gravity="center"
         android:layout_marginTop="@android:dimen/app_icon_size"
-        android:textColor="#000000"
+        android:textColor="#009fff"
         android:textSize="30sp" />
 
     <EditText
@@ -97,7 +97,7 @@
         android:layout_gravity="center"
         android:text="REGISTER"
         android:textColor="@color/white"
-        android:backgroundTint="#000000"
+        android:background="@drawable/buttonstyle"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />
@@ -108,8 +108,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:linksClickable="true"
+        android:layout_marginTop="5dp"
         android:text="Already Registered? Login Here"
-        android:textColor="#000000"
+        android:textColor="#000fff"
+        android:fontFamily="@font/seguisb"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="107dp"
         tools:layout_editor_absoluteY="524dp" />

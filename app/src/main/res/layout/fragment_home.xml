@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_light"
+        android:background="@drawable/bgb"
         android:id="@+id/ll"
         android:orientation="vertical"
         android:paddingBottom="10dp"
@@ -48,10 +48,9 @@
                 android:layout_height="wrap_content"
                 android:text="Personal Details : "
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="10dp"
                 android:textSize="30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/sub"/>
+                android:fontFamily="@font/seguisb"/>
             <TextView
                 android:id="@+id/sub1"
                 android:layout_width="wrap_content"
@@ -62,7 +61,7 @@
                 android:paddingTop="0dp"
                 android:textSize="20dp"
                 android:textColor="#FF000000"
-                android:fontFamily="@font/text"/>
+                android:fontFamily="@font/segoeui"/>
 
             <TextView
                 android:id="@+id/fillapplication"
@@ -74,7 +73,7 @@
                 android:textSize="20dp"
                 android:layout_marginTop="50dp"
                 android:textColor="#FF0000ff"
-                android:fontFamily="@font/sub"/>
+                android:fontFamily="@font/seguisb"/>
 
           <!--  <TextView
                 android:id="@+id/appli_link"
@@ -110,10 +109,9 @@
                 android:layout_height="wrap_content"
                 android:text="Educational Details : "
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="10dp"
                 android:textSize="30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/sub"/>
+                android:fontFamily="@font/seguisb"/>
             <TextView
                 android:id="@+id/sub2.1"
                 android:layout_width="wrap_content"
@@ -124,7 +122,7 @@
                 android:paddingTop="0dp"
                 android:textSize="20dp"
                 android:textColor="#FF000000"
-                android:fontFamily="@font/text"/>
+                android:fontFamily="@font/segoeui"/>
             <TextView
                 android:id="@+id/appli_link2"
                 android:layout_width="wrap_content"
@@ -132,10 +130,10 @@
                 android:layout_gravity="center"
                 android:text="@string/fill"
                 android:textAlignment="center"
-                android:paddingTop="90dp"
                 android:textSize="20dp"
+                android:layout_marginTop="50dp"
                 android:textColor="#FF0000ff"
-                android:fontFamily="@font/sub"/>
+                android:fontFamily="@font/seguisb"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -162,7 +160,7 @@
                 android:paddingTop="10dp"
                 android:textSize="30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/sub"/>
+                android:fontFamily="@font/seguisb"/>
 <!--            <TextView-->
 <!--                android:id="@+id/appli_link3"-->
 <!--                android:layout_width="wrap_content"-->
@@ -184,7 +182,7 @@
                 android:layout_marginTop="60dp"
                 android:textSize="20dp"
                 android:textColor="#FF0000ff"
-                android:fontFamily="@font/sub"/>
+                android:fontFamily="@font/seguisb"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -197,7 +195,7 @@
             android:textAlignment="center"
             android:textColor="#ff0000"
             android:textSize="20dp"
-            android:fontFamily="@font/text"
+            android:fontFamily="@font/seguisb"
             android:textStyle="bold"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="107dp"

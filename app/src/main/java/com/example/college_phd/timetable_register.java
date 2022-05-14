@@ -2,7 +2,6 @@ package com.example.college_phd;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,10 +15,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.college_phd.ui.teacher_dashboard_frag.teacher_dashboard_frag;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -147,9 +146,10 @@ public class timetable_register extends AppCompatActivity {
             public void onClick(View v) {
                 timetable timetable = new timetable(name.getText().toString(), appid.getText().toString(),status.getText().toString(), date2.getText().toString(), time2.getText().toString());
                 reff.child("timetable").push().setValue(timetable);
-//                Toast.makeText(timetable_register.this, "Error", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(timetable_register.this, teacher_dashboard_frag.class);
-                startActivity(intent);
+                Toast.makeText(timetable_register.this, "Status has been Set", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(timetable_register.this, teacher_dashboard_frag.class);
+//                startActivity(intent);
+                finish();
 
             }
         });

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_light"
+    android:background="@drawable/bgb"
     tools:context=".options">
 
     <TextView
@@ -14,9 +14,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="260dp"
         android:layout_marginBottom="20dp"
-        android:fontFamily="@font/title"
+        android:fontFamily="@font/seguibl"
         android:text="LOGIN AS "
-        android:textColor="@color/black"
+        android:textColor="#007fff"
         android:textSize="30dp"
         tools:ignore="MissingConstraints" />
 
@@ -120,8 +120,8 @@
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_baseline_arrow_circle_left_24" />
 
 

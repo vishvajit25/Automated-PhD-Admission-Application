@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_light"
+    android:background="@drawable/bgb"
     tools:context=".Register"
     android:id="@+id/login_admin"
-    android:paddingTop="10sp"
+    android:paddingTop="170sp"
     android:orientation="vertical"
     android:gravity="center_vertical|start"
     android:paddingBottom="10dp"
@@ -18,12 +18,13 @@
         android:id="@+id/logintext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/title"
+        android:fontFamily="@font/seguibl"
         android:gravity="center_horizontal"
         android:text="LOGIN"
+        android:elevation="4dp"
         android:layout_gravity="center"
         android:layout_marginTop="@android:dimen/app_icon_size"
-        android:textColor="@color/black"
+        android:textColor="#007fff"
         android:textSize="30sp" />
 
 
@@ -72,7 +73,7 @@
         android:text="LOGIN"
         android:textColor="@color/white"
         tools:ignore="MissingConstraints"
-        android:backgroundTint="#000000"
+        android:background="@drawable/buttonstyle"
         tools:layout_editor_absoluteX="101dp"
         tools:layout_editor_absoluteY="488dp" />
     <Button
@@ -86,6 +87,20 @@
         android:alpha="0"
         android:textColor="@color/black"
         tools:ignore="MissingConstraints" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="200dp">
+
+        <ImageView
+            android:id="@+id/prevbutton"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="left|bottom"
+            android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+    </RelativeLayout>
 <!--    <TextView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->

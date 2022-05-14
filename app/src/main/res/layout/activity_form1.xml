@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_light"
+    android:background="@drawable/bgb"
     tools:context=".form1"
     android:id="@+id/form1"
     android:paddingTop="10sp"
@@ -18,12 +18,13 @@
         android:id="@+id/form1title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ibm_bold"
+        android:fontFamily="@font/seguibl"
         android:gravity="center_horizontal"
         android:text="Personal Records : "
         android:layout_gravity="center"
-        android:layout_marginTop="@android:dimen/app_icon_size"
-        android:textColor="#000000"
+        android:layout_marginTop="80dp"
+        android:textColor="#008fFF"
+        android:layout_marginBottom="15dp"
         android:textSize="30sp" />
 
 
@@ -35,6 +36,7 @@
         android:ems="10"
         android:gravity="center_vertical|start"
         android:hint="Father's Name"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:inputType="textPersonName" />
@@ -51,6 +53,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="12dp"
         android:dropDownWidth="211dp"
+        android:textStyle="bold"
         android:textColorHint="@color/black"
         android:hint="Gender"
         android:textColor="@color/black"
@@ -68,6 +71,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="false"
         android:cursorVisible="false"
+        android:textStyle="bold"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:hint="DOB"
@@ -80,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
+        android:textStyle="bold"
         android:layout_marginLeft="1dp"
         android:textColorHint="@color/black"
         android:layout_marginBottom="16dp"
@@ -100,6 +105,7 @@
         android:textColorHint="@color/black"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
+        android:textStyle="bold"
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Aadhar Gdrive Link"
@@ -114,6 +120,7 @@
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="bold"
         android:layout_marginLeft="1dp"
         android:textColorHint="@color/black"
         android:layout_marginBottom="12dp"
@@ -127,14 +134,29 @@
     <Button
         android:id="@+id/savebutton"
         android:layout_width="210dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:text="SAVE"
-        android:backgroundTint="#000000"
+        android:background="@drawable/buttonstyle"
         android:textColor="@color/white"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteY="488dp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp">
+
+
+        <ImageView
+            android:id="@+id/prevbutton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+    </RelativeLayout>
 
 
 

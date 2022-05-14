@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class form1 extends AppCompatActivity {
     AutoCompleteTextView gender_atc,nationality_atc;
     EditText editText;
     Button save;
+    ImageView prev;
     final Calendar myCalendar = Calendar.getInstance();
     EditText dob;
     StorageReference storageReference;
@@ -44,6 +46,13 @@ public class form1 extends AppCompatActivity {
         EditText dob = (EditText) findViewById(R.id.dob);
         gender_atc = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView_gender);
         nationality_atc = (AutoCompleteTextView) findViewById(R.id.nationality);
+        prev = findViewById(R.id.prevbutton);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {

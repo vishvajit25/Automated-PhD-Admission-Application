@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="220dp"
+    android:layout_height="230dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     android:background="@drawable/card_bg"
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:paddingLeft="16dp"
-        android:background="@drawable/card_bg"
+        android:background="@drawable/bgb_header"
         android:orientation="vertical">
 
         <LinearLayout
@@ -25,6 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NAME :"
+                android:fontFamily="@font/seguisb"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold"/>
@@ -35,8 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:text="New"
+                android:fontFamily="@font/segoeui"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="23sp" />
 
         </LinearLayout>
 
@@ -50,6 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="UID : "
+                android:fontFamily="@font/seguisb"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold"/>
@@ -61,7 +64,7 @@
                 android:layout_marginLeft="8dp"
                 android:text="Stark"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="23sp" android:fontFamily="@font/segoeui" />
 
         </LinearLayout>
 
@@ -75,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TENTH % :"
+                android:fontFamily="@font/seguisb"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold"/>
@@ -86,7 +90,7 @@
                 android:layout_marginLeft="8dp"
                 android:text="18"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="23sp" android:fontFamily="@font/segoeui" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -99,6 +103,7 @@
                 android:text="TWLFTH % :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
+                android:fontFamily="@font/seguisb"
                 android:textStyle="bold"/>
 
             <TextView
@@ -108,7 +113,7 @@
                 android:layout_marginLeft="8dp"
                 android:text="18"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="23sp" android:fontFamily="@font/segoeui" />
         </LinearLayout>
 
         <LinearLayout
@@ -123,7 +128,7 @@
                 android:text="UG % :"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:fontFamily="@font/seguisb" />
 
             <TextView
                 android:id="@+id/tvug"
@@ -132,7 +137,7 @@
                 android:layout_marginLeft="8dp"
                 android:text="18"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="23sp" android:fontFamily="@font/segoeui" />
 
         </LinearLayout>
         <LinearLayout
@@ -156,7 +161,7 @@
                 android:layout_marginLeft="8dp"
                 android:text="IoT"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="23sp" android:fontFamily="@font/segoeui" />
 
         </LinearLayout>
 

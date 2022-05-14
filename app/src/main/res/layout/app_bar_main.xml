@@ -16,8 +16,7 @@
             android:id="@+id/toolbar_t"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:backgroundTint="#000000"
+            android:background="@drawable/bgb_bar"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/Theme.College_PhD.PopupOverlay" />
 
