@@ -36,7 +36,7 @@
         android:ems="10"
         android:gravity="center_vertical|start"
         android:hint="Father's Name"
-        android:textStyle="bold"
+        
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:inputType="textPersonName" />
@@ -53,7 +53,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginBottom="12dp"
         android:dropDownWidth="211dp"
-        android:textStyle="bold"
+        
         android:textColorHint="@color/black"
         android:hint="Gender"
         android:textColor="@color/black"
@@ -71,7 +71,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="false"
         android:cursorVisible="false"
-        android:textStyle="bold"
+        
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:hint="DOB"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="1dp"
-        android:textStyle="bold"
+        
         android:layout_marginLeft="1dp"
         android:textColorHint="@color/black"
         android:layout_marginBottom="16dp"
@@ -105,7 +105,7 @@
         android:textColorHint="@color/black"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:textStyle="bold"
+        
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Aadhar Gdrive Link"
@@ -120,7 +120,7 @@
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textStyle="bold"
+        
         android:layout_marginLeft="1dp"
         android:textColorHint="@color/black"
         android:layout_marginBottom="12dp"

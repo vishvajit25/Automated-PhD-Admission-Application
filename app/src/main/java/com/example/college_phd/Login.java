@@ -97,20 +97,21 @@ public class Login extends AppCompatActivity {
                 }
                 if (password.length() < 6) {
                     mPassword.setError("Password must  be more than 6 characters.");
-                }
-                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Login.this, Navigation_drawer.class);
+                } else {
+                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Login.this, Navigation_drawer.class);
 //                            intent.putExtra("NAME", Fullname);
-                            startActivity(intent);
-                        } else {
-                            Toast.makeText(Login.this, "ERROR !!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(Login.this, "ERROR !!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     }

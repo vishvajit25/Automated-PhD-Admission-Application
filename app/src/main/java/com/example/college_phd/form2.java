@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -188,20 +189,25 @@ public class form2 extends AppCompatActivity {
                 String ugperc = ug.getText().toString();
                 userID = mAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = fstore.collection("users").document(userID);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthboard").setValue(tenthboard);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthpercentage").setValue(tenthperc);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthcertificate").setValue(tenthlink);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthboard").setValue(twelfthboard);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthpercentage").setValue(twelfthperc);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthcertificate").setValue(twelfthlink);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("ugpercentage").setValue(ugperc);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("courseopted").setValue(courseopted);
-                ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("authorid").setValue(author);
-                finish();
-                //Map<String,Object> user = new HashMap<>();
-                //final Object Tenth_Board = user.put("Tenth Board", tenthboard);
-                //final Object Tenth_percentage = user.put("Tenth %", tenth);
-                //final Object Tenth_Certificate =user.put("Tenth Mark Sheet Link", tenthtwo);
+                if (TextUtils.isEmpty(tenthboard) || TextUtils.isEmpty(tenthlink) || TextUtils.isEmpty(tenthperc) || TextUtils.isEmpty(twelfthboard) || TextUtils.isEmpty(twelfthlink) || TextUtils.isEmpty(twelfthperc) || TextUtils.isEmpty(ugperc) || TextUtils.isEmpty(courseopted) || TextUtils.isEmpty(twelfthperc)) {
+                    Toast.makeText(form2.this, "Check All Fields !!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthboard").setValue(tenthboard);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthpercentage").setValue(tenthperc);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("tenthcertificate").setValue(tenthlink);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthboard").setValue(twelfthboard);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthpercentage").setValue(twelfthperc);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("twelfthcertificate").setValue(twelfthlink);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("ugpercentage").setValue(ugperc);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("courseopted").setValue(courseopted);
+                    ref.child("Applicant").child(FirebaseAuth.getInstance().getUid().toString()).child("authorid").setValue(author);
+                    finish();
+
+                    //Map<String,Object> user = new HashMap<>();
+                    //final Object Tenth_Board = user.put("Tenth Board", tenthboard);
+                    //final Object Tenth_percentage = user.put("Tenth %", tenth);
+                    //final Object Tenth_Certificate =user.put("Tenth Mark Sheet Link", tenthtwo);
                 /*final Object Twelfth_Board =user.put("Twelfth Board", twelfthboard);
                 final Object Twelfth_Percentage =user.put("Twelfth %", twelfth);
                 final Object Twelfth_Certificate =user.put("Twelfth Mark Sheet Link", twelfthtwo);
@@ -209,10 +215,11 @@ public class form2 extends AppCompatActivity {
                 final Object Author_ID = user.put("Author ID", author);
                 final Object UG_Percentage =user.put("UG %",ugperc);
                 documentReference.set(user);*/
-                Toast.makeText(form2.this, "Submitted", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(form2.this, MainActivity.class);
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                finish();
+                    Toast.makeText(form2.this, "Submitted", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(form2.this, MainActivity.class);
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                }
             }
         });
     }

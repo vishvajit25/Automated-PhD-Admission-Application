@@ -98,26 +98,27 @@ public class login_teacher extends AppCompatActivity {
                     mEmail.setError("Email is required.");
 
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     mPassword.setError("Password cant be empty.");
                 }
-                if(password.length()<6){
+                if (password.length() < 6) {
                     mPassword.setError("Password must  be more than 6 characters.");
-                }
-                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(login_teacher.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent (login_teacher.this, MainActivity_teacher.class);
-                            startActivity(intent);
+                } else {
+                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(login_teacher.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(login_teacher.this, MainActivity_teacher.class);
+                                startActivity(intent);
 
 
-                        }else {
-                            Toast.makeText(login_teacher.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(login_teacher.this, "ERROR !!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     }

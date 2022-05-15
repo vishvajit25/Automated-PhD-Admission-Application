@@ -86,7 +86,7 @@ public class Register extends AppCompatActivity {
 //                SharedPreferences.Editor editor1 = sp.edit();
 //                editor1.putString("Username", Fullname);
 //                editor1.commit();
-                Applicant applicant = new Applicant(emailid.getText().toString(), name.getText().toString(),textView.getText().toString());
+                Applicant applicant = new Applicant(emailid.getText().toString(), name.getText().toString(), textView.getText().toString());
                 /*dao.add(applicant).addOnSuccessListener(suc->
                 {
                     Toast.makeText(Register.this, "Record Inserted", Toast.LENGTH_SHORT).show();
@@ -95,21 +95,29 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(Register.this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
                 });*/
                 if (TextUtils.isEmpty((email))) {
-
                     emailid.setError("Email is required.");
 
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     pswd.setError("Password cant be empty.");
                 }
-                if(password.length()<6){
+                if (password.length() < 6) {
                     pswd.setError("Password must  be more than 6 characters.");
                 }
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(uniqueid)) {
+                    textView.setError("Click Generate Unique ID to get ID!!");
+                }
+                if (TextUtils.isEmpty(phonenumber)) {
+                    phoneno.setError("Phone Number cant be empty.");
+                }
+                if (TextUtils.isEmpty(Fullname)) {
+                    name.setError("Name cant be empty.");
+                } else {
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
 //                            userID = mAuth.getCurrentUser().getUid();
                             /*DocumentReference documentReference = fstore.collection("users").document(userID);
 
@@ -119,19 +127,20 @@ public class Register extends AppCompatActivity {
                             user.put("Phone No", phonenumber);
                             final Object application_id = user.put("Application ID", uniqueid);
                             documentReference.set(user);*/
-                            reff.child("Applicant").child(mAuth.getUid()).child("Name").setValue(Fullname);
-                            reff.child("Applicant").child(mAuth.getUid()).child("ApplicantID").setValue(uniqueid);
+                                reff.child("Applicant").child(mAuth.getUid()).child("Name").setValue(Fullname);
+                                reff.child("Applicant").child(mAuth.getUid()).child("ApplicantID").setValue(uniqueid);
 
 //                            Intent intent = new Intent(Register.this, Login.class);
 ////                            intent.putExtra("NAME", Fullname);
 //                            startActivity(intent);
-                            finish();
-                            FirebaseAuth.getInstance().signOut();
-                        }else {
-                            Toast.makeText(Register.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                finish();
+                                FirebaseAuth.getInstance().signOut();
+                            } else {
+                                Toast.makeText(Register.this, "ERROR !!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
 //        login.setOnClickListener(new OnClickListener() {

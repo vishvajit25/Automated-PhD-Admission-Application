@@ -55,7 +55,7 @@ public class register_teacher extends AppCompatActivity {
                 String Fullname = name.getText().toString();
                 String phonenumber = phoneno.getText().toString();
                 String permission = permission_faculty.toString();
-                Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(),phoneno.getText().toString(), permission_faculty);
+                Faculty faculty = new Faculty(emailid.getText().toString(), name.getText().toString(), phoneno.getText().toString(), permission_faculty);
 
 //                dao.add(faculty).addOnSuccessListener(suc->
 //                {
@@ -69,37 +69,44 @@ public class register_teacher extends AppCompatActivity {
                     emailid.setError("Email is required.");
 
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     pswd.setError("Password cant be empty.");
                 }
-                if(password.length()<6){
+                if (password.length() < 6) {
                     pswd.setError("Password must  be more than 6 characters.");
                 }
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(register_teacher.this, "User Created", Toast.LENGTH_SHORT).show();
-                            userID = mAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fstore.collection("users").document(userID);
+                if (TextUtils.isEmpty(Fullname)) {
+                    name.setError("Name cant be empty.");
+                }
+                if (TextUtils.isEmpty(phonenumber)) {
+                    phoneno.setError("Phone Number cant be empty.");
+                } else {
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(register_teacher.this, "User Created", Toast.LENGTH_SHORT).show();
+                                userID = mAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = fstore.collection("users").document(userID);
 
 //                            Map<String,Object> user = new HashMap<>();
 //                            user.put("Name", Fullname);
 //                            user.put("Email", email);
 //                            user.put("Phone No", phonenumber);
 //                            documentReference.set(user);
-                            ref.child("Faculty").child(mAuth.getUid()).child("Name").setValue(Fullname);
-                            ref.child("Faculty").child(mAuth.getUid()).child("EmailID").setValue(email);
-                            ref.child("Faculty").child(mAuth.getUid()).child("Phone No").setValue(phonenumber);
-                            ref.child("Faculty").child(mAuth.getUid()).child("permission").setValue(permission);
-                            Intent intent = new Intent(register_teacher.this, login_teacher.class);
-                            startActivity(new Intent(getApplicationContext(),login_teacher.class));
-                            FirebaseAuth.getInstance().signOut();
-                        }else {
-                            Toast.makeText(register_teacher.this, "ERROR !!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                ref.child("Faculty").child(mAuth.getUid()).child("Name").setValue(Fullname);
+                                ref.child("Faculty").child(mAuth.getUid()).child("EmailID").setValue(email);
+                                ref.child("Faculty").child(mAuth.getUid()).child("Phone No").setValue(phonenumber);
+                                ref.child("Faculty").child(mAuth.getUid()).child("permission").setValue(permission);
+                                Intent intent = new Intent(register_teacher.this, login_teacher.class);
+                                startActivity(new Intent(getApplicationContext(), login_teacher.class));
+                                FirebaseAuth.getInstance().signOut();
+                            } else {
+                                Toast.makeText(register_teacher.this, "ERROR !!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     }

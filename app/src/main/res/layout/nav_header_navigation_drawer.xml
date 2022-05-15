@@ -30,8 +30,9 @@
         android:layout_toRightOf="@id/imageView"
         android:fontFamily="@font/seguisb"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#ffffff"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textSize="30dp"/>
 
 
 </RelativeLayout>

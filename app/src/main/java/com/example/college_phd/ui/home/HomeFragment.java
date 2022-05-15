@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.example.college_phd.R;
 import com.example.college_phd.form1;
 import com.example.college_phd.form2;
-import com.example.college_phd.result;
+import com.example.college_phd.result_student;
 
 public class HomeFragment extends Fragment  {
 
@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment  {
         da.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), result.class);
+                Intent intent = new Intent(getActivity(), result_student.class);
                 startActivity(intent);
             }
         });

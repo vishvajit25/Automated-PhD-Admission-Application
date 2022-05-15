@@ -10,7 +10,6 @@
             android:title="@string/menu_home"
             android:iconTint="@color/black"
             />
-
         <item
             android:id="@+id/nav_inst"
             android:icon="@drawable/speaker_white"
@@ -19,6 +18,7 @@
             android:id="@+id/nav_faq"
             android:icon="@drawable/ic_baseline_question_answer_24"
             android:title="@string/menu_slideshow" />
+
 
     </group>
 </menu>

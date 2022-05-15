@@ -15,7 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import com.example.college_phd.databinding.ActivityNavigationDrawerBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -58,6 +61,14 @@ public class Navigation_drawer extends AppCompatActivity {
 //            }
 //        });
         NavigationView navigationView =  binding.navView;
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_inst, R.id.nav_faq)
+                .setOpenableLayout(drawerLayout)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation_drawer);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(binding.navView, navController);
+
         hview = navigationView.getHeaderView(0);
         user = hview.findViewById(R.id.user);
         ref.child("Applicant").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -121,13 +132,29 @@ public class Navigation_drawer extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
                 Toast.makeText(Navigation_drawer.this, menuItem.getItemId() + "", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(Navigation_drawer.this, GalleryFragment.class);
-////                    startActivity(new Intent(getApplicationContext(), com.ui.gallery.GalleryFragment.class));
+                if (menuItem.getItemId() == R.id.nav_home) {
+                Intent intent = new Intent(Navigation_drawer.this, Navigation_drawer.class);
+                startActivity(new Intent(getApplicationContext(), Navigation_drawer.class));
+//                FragmentManager fm = getSupportFragmentManager();
+//                fm.beginTransaction().replace(R.id.fragment_gallery, new NewFragmentToReplace()).commit();
+//                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+//                    final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                    ft.replace(androidx.navigation.fragment.R.id.nav_host_fragment_container, new GalleryFragment(), "NewFragmentTag");
+//                    ft.addToBackStack(null);
+//                    ft.commit();
 //                startActivity(intent);
 
-
+                }
+                if (menuItem.getItemId() == R.id.nav_inst) {
+                    Intent intent = new Intent(Navigation_drawer.this, instruction.class);
+                    startActivity(new Intent(getApplicationContext(), instruction.class));
+                }
+                if (menuItem.getItemId() == R.id.nav_faq) {
+                    Intent intent = new Intent(Navigation_drawer.this, subject.class);
+                    startActivity(new Intent(getApplicationContext(), subject.class));
+                }
                 return true;
-
             }
         });
     }

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -32,7 +33,7 @@ public class form1 extends AppCompatActivity {
     Button save;
     ImageView prev;
     final Calendar myCalendar = Calendar.getInstance();
-    EditText dob;
+    EditText dob,fn,aid,alink;
     StorageReference storageReference;
     StorageReference databaseReference;
     FirebaseFirestore fstore;
@@ -44,6 +45,10 @@ public class form1 extends AppCompatActivity {
         setContentView(R.layout.activity_form1);
         save = findViewById(R.id.savebutton);
         EditText dob = (EditText) findViewById(R.id.dob);
+        EditText fn = (EditText) findViewById(R.id.fathername);
+        EditText aid = (EditText) findViewById(R.id.aadharno);
+        EditText alink = (EditText) findViewById(R.id.aadharlink);
+
         gender_atc = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView_gender);
         nationality_atc = (AutoCompleteTextView) findViewById(R.id.nationality);
         prev = findViewById(R.id.prevbutton);
@@ -78,10 +83,22 @@ public class form1 extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(form1.this, "Saved Data", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(form1.this, MainActivity.class);
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                finish();
+                String fathername = fn.getText().toString().trim();
+                String aadharno = aid.getText().toString().trim();
+                String aadharlink = alink.getText().toString();
+                String date = dob.getText().toString();
+                String genders = gender_atc.getText().toString();
+                String nation = nationality_atc.getText().toString();
+                if(TextUtils.isEmpty(fathername) || TextUtils.isEmpty(aadharlink) || TextUtils.isEmpty(aadharno) || TextUtils.isEmpty(date) || TextUtils.isEmpty(genders) || TextUtils.isEmpty(nation)) {
+                    Toast.makeText(form1.this, "Check All Fields. Fields cant be Empty !!", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    Toast.makeText(form1.this, "Saved Data", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(form1.this, MainActivity.class);
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                }
             }
         });
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
