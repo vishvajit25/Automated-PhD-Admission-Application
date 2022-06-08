@@ -1,5 +1,7 @@
 # AUTOMATED PHD ADMISSION MOBILE APPLICATION
-<h2> This repository consists of the data files of the application created from Android Studio.</h2>
+<h2> This repository consists of the data files of the application created from Android Studio.</h2> 
+<br>
+<h1> By Vishvajit S<<h1>
 <br>
  <p>
   The data are of three types:
