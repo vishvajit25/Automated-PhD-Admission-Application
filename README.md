@@ -2,9 +2,12 @@
 <h2> This repository consists of the data files of the application created from Android Studio.</h2>
 <br>
  <p>
-  The data are of three types.
+  The data are of three types:
+ <br>
    1. Java Class files also known as modules.
+ <br>
    2. XML files which are the UI of the application.
+ <br>
    3. The resources of the project.
  </p>
 <br>
